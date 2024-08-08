@@ -1,0 +1,476 @@
+2024-08-07T00:53:16.908+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 24572 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many)
+2024-08-07T00:53:16.909+05:30 DEBUG 24572 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-07T00:53:16.910+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T00:53:16.962+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-07T00:53:16.964+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-07T00:53:17.807+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T00:53:17.890+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
+2024-08-07T00:53:18.746+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-07T00:53:18.772+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T00:53:18.772+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-07T00:53:18.823+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T00:53:18.823+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1859 ms
+2024-08-07T00:53:19.011+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T00:53:19.095+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T00:53:19.152+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T00:53:19.806+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T00:53:19.845+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T00:53:20.336+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2eaf905e
+2024-08-07T00:53:20.339+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T00:53:21.426+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T00:53:21.532+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T00:53:21.895+05:30 DEBUG 24572 --- [12-spring-rest-security] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-07T00:53:21.958+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-07T00:53:22.044+05:30  WARN 24572 --- [12-spring-rest-security] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T00:53:22.788+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-07T00:53:23.123+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-07T00:53:23.134+05:30  INFO 24572 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Started Application in 6.622 seconds (process running for 7.549)
+2024-08-07T00:55:10.843+05:30  INFO 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-07T00:55:10.843+05:30  INFO 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-07T00:55:10.847+05:30  INFO 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-07T00:55:11.020+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] c.m.app.controller.AuthController        : in register method using trace 
+2024-08-07T00:55:11.020+05:30 ERROR 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] c.m.app.controller.AuthController        : In Register method true
+2024-08-07T00:55:11.207+05:30 DEBUG 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    limit
+        ?
+2024-08-07T00:55:11.210+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikiran2]
+2024-08-07T00:55:11.210+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T00:55:11.221+05:30 DEBUG 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+2024-08-07T00:55:11.221+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikiran2@gmail.com]
+2024-08-07T00:55:11.221+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T00:55:11.335+05:30 DEBUG 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2024-08-07T00:55:11.335+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ROLE_ADMIN]
+2024-08-07T00:55:11.398+05:30 DEBUG 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (email, name, password, username) 
+    values
+        (?, ?, ?, ?)
+2024-08-07T00:55:11.402+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikiran2@gmail.com]
+2024-08-07T00:55:11.403+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [saikiran]
+2024-08-07T00:55:11.403+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$4LESo3XJW/HxDC16CBolduX0absLkGt35t2ANBne6bbCYBavunrAK]
+2024-08-07T00:55:11.403+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [saikiran2]
+2024-08-07T00:55:11.469+05:30 DEBUG 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2024-08-07T00:55:11.470+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2024-08-07T00:55:11.470+05:30 TRACE 24572 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2024-08-07T14:14:53.317+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 12372 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many)
+2024-08-07T14:14:53.319+05:30 DEBUG 12372 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-07T14:14:53.320+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T14:14:53.387+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-07T14:14:53.388+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-07T14:14:54.482+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T14:14:54.574+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+2024-08-07T14:14:57.826+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-07T14:14:57.843+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T14:14:57.843+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-07T14:14:57.900+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T14:14:57.900+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4512 ms
+2024-08-07T14:14:58.156+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T14:14:58.277+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T14:14:58.329+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T14:14:58.708+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T14:14:58.750+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T14:14:59.307+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b17100e
+2024-08-07T14:14:59.314+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T14:15:01.718+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T14:15:02.091+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T14:15:03.571+05:30 DEBUG 12372 --- [12-spring-rest-security] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-07T14:15:03.931+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-07T14:15:04.182+05:30  WARN 12372 --- [12-spring-rest-security] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T14:15:05.109+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-07T14:15:05.163+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-07T14:15:05.176+05:30  INFO 12372 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Started Application in 12.328 seconds (process running for 14.112)
+2024-08-07T14:15:47.027+05:30  INFO 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-07T14:15:47.028+05:30  INFO 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-07T14:15:47.030+05:30  INFO 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-07T14:15:47.368+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] c.m.app.controller.AuthController        : in register method using trace 
+2024-08-07T14:15:47.368+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] c.m.app.controller.AuthController        : In Register method true
+2024-08-07T14:15:47.697+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    limit
+        ?
+2024-08-07T14:15:47.702+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikran2]
+2024-08-07T14:15:47.702+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:15:47.722+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+2024-08-07T14:15:47.723+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikirn2@gmail.com]
+2024-08-07T14:15:47.724+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:15:47.938+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2024-08-07T14:15:47.939+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ROLE_ADMIN]
+2024-08-07T14:15:48.130+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (email, name, password, username) 
+    values
+        (?, ?, ?, ?)
+2024-08-07T14:15:48.134+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikirn2@gmail.com]
+2024-08-07T14:15:48.134+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [saikiran]
+2024-08-07T14:15:48.134+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$AD.Zqlyl30Q.N328E5KtDuE.ElO/hebPBCBjneMTzgXzFKfopiQIi]
+2024-08-07T14:15:48.134+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [saikran2]
+2024-08-07T14:15:48.216+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2024-08-07T14:15:48.217+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2024-08-07T14:15:48.217+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2024-08-07T14:17:29.978+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] c.m.app.controller.AuthController        : in register method using trace 
+2024-08-07T14:17:29.979+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] c.m.app.controller.AuthController        : In Register method false
+2024-08-07T14:17:29.981+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    limit
+        ?
+2024-08-07T14:17:29.983+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikraaan2]
+2024-08-07T14:17:29.984+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:17:29.987+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+2024-08-07T14:17:29.988+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikirn2a@gmail.com]
+2024-08-07T14:17:29.988+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:17:30.126+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2024-08-07T14:17:30.127+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ROLE_USER]
+2024-08-07T14:17:30.131+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (email, name, password, username) 
+    values
+        (?, ?, ?, ?)
+2024-08-07T14:17:30.131+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [saikirn2a@gmail.com]
+2024-08-07T14:17:30.131+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [saikiran]
+2024-08-07T14:17:30.131+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$j1lt2L5PS5jGgxEeIZJtze/SqrT.tccBqbFWQ8Ox2/tfDrTw92sTa]
+2024-08-07T14:17:30.131+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [saikraaan2]
+2024-08-07T14:17:30.136+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2024-08-07T14:17:30.137+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2024-08-07T14:17:30.137+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [2]
+2024-08-07T14:27:04.441+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] c.m.app.controller.AuthController        : In Login method
+2024-08-07T14:27:04.704+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:27:04.724+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:27:04.725+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:27:05.013+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-08-07T14:27:36.208+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] c.m.app.controller.AuthController        : In Login method
+2024-08-07T14:27:36.212+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:27:36.214+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:27:36.214+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:27:36.314+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-08-07T14:28:42.163+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-07T14:28:57.621+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-07T14:29:44.925+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-07T14:30:29.752+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 28588 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many)
+2024-08-07T14:30:29.755+05:30 DEBUG 28588 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-07T14:30:29.756+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-07T14:30:29.826+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-07T14:30:29.826+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-07T14:30:30.833+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-07T14:30:30.915+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2024-08-07T14:30:32.134+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-07T14:30:32.150+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-07T14:30:32.151+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-07T14:30:32.203+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-07T14:30:32.203+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2377 ms
+2024-08-07T14:30:32.376+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-07T14:30:32.481+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-07T14:30:32.528+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-07T14:30:32.909+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-07T14:30:32.969+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-07T14:30:33.382+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10ebd3f
+2024-08-07T14:30:33.384+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-07T14:30:34.568+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-07T14:30:34.662+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T14:30:35.108+05:30 DEBUG 28588 --- [12-spring-rest-security] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-07T14:30:35.199+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-07T14:30:35.374+05:30  WARN 28588 --- [12-spring-rest-security] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-07T14:30:35.912+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-07T14:30:36.486+05:30  WARN 28588 --- [12-spring-rest-security] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-08-07T14:30:36.506+05:30  WARN 28588 --- [12-spring-rest-security] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-08-07T14:30:36.508+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-07T14:30:36.511+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-07T14:30:36.521+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-07T14:30:36.535+05:30  INFO 28588 --- [12-spring-rest-security] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-07T14:30:36.557+05:30 ERROR 28588 --- [12-spring-rest-security] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2024-08-07T14:31:08.317+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-08-07T14:31:36.386+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] c.m.app.controller.AuthController        : in register method using trace 
+2024-08-07T14:31:36.387+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] c.m.app.controller.AuthController        : In Register method true
+2024-08-07T14:31:36.392+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+    limit
+        ?
+2024-08-07T14:31:36.395+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Ajaykumar]
+2024-08-07T14:31:36.396+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:31:36.403+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+2024-08-07T14:31:36.403+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:31:36.404+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-07T14:31:36.548+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2024-08-07T14:31:36.549+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ROLE_ADMIN]
+2024-08-07T14:31:36.571+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (email, name, password, username) 
+    values
+        (?, ?, ?, ?)
+2024-08-07T14:31:36.573+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:31:36.573+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Ajaykumar]
+2024-08-07T14:31:36.573+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$ep3T5AeqvD98qMyI2l9ql.FA7l3WbCzlYrXzTG2NfRXj8rd6YlWK6]
+2024-08-07T14:31:36.573+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [Ajaykumar]
+2024-08-07T14:31:36.584+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2024-08-07T14:31:36.585+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-07T14:31:36.585+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2024-08-07T14:32:01.530+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-3] c.m.app.controller.AuthController        : In Login method
+2024-08-07T14:32:01.533+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:32:01.534+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:32:01.535+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [NONE_PROVIDED]
+2024-08-07T14:32:01.699+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2024-08-07T14:32:42.356+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('{' (code 123)): was expecting double-quote to start field name]
+2024-08-07T14:33:09.606+05:30 ERROR 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] c.m.app.controller.AuthController        : In Login method
+2024-08-07T14:33:09.621+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:33:09.623+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Ajaykumar]
+2024-08-07T14:33:09.624+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Ajaykumar]
+2024-08-07T14:33:09.761+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-08-07T14:33:09.762+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-07T14:36:09.440+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:36:09.442+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:36:09.442+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:36:09.446+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-08-07T14:36:09.446+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-07T14:36:09.464+05:30  WARN 12372 --- [12-spring-rest-security] [http-nio-8082-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth/students.]
+2024-08-07T14:37:19.146+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=? 
+        or u1_0.email=?
+2024-08-07T14:37:19.147+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:37:19.147+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [ak@gmail.com]
+2024-08-07T14:37:19.150+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-08-07T14:37:19.150+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-07T14:37:19.223+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        s1_0.id,
+        s1_0.email,
+        s1_0.first_name,
+        s1_0.last_name 
+    from
+        student s1_0 
+    where
+        s1_0.id=?
+2024-08-07T14:37:19.223+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [0]
+2024-08-07T14:37:19.238+05:30 DEBUG 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        student
+        (email, first_name, last_name) 
+    values
+        (?, ?, ?)
+2024-08-07T14:37:19.239+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak1@gmail.com]
+2024-08-07T14:37:19.239+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [ajay]
+2024-08-07T14:37:19.239+05:30 TRACE 12372 --- [12-spring-rest-security] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [kumar]

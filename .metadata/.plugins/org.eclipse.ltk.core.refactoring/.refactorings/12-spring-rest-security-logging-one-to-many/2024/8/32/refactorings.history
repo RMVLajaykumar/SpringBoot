@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BankAppController.java&apos; to &apos;13-springBankApp-project/src/main/java/com.monocept.app.controller&apos;&#x0D;&#x0A;- Original project: &apos;12-spring-rest-security-logging-one-to-many&apos;&#x0D;&#x0A;- Destination element: &apos;13-springBankApp-project/src/main/java/com.monocept.app.controller&apos;&#x0D;&#x0A;- Original element: &apos;com.monocept.app.controller.BankAppController.java&apos;" description="Copy compilation unit" destination="=13-springBankApp-project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.monocept.app.controller" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.monocept.app.controller{BankAppController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1723028496826" units="1" version="1.0"/>
+</session>

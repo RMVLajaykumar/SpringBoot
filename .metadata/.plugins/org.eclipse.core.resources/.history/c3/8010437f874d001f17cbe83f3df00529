@@ -1,0 +1,175 @@
+package com.monocept.app.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.monocept.app.entity.Employee;
+
+import com.monocept.app.exception.EmployeeNotFoundException;
+
+import com.monocept.app.service.EmployeeService;
+
+import jakarta.validation.Valid;
+
+
+@RestController
+public class EmployeeController {
+	
+	private  EmployeeService employeeService;
+
+  
+	
+	
+	public EmployeeController(EmployeeService employeeService) {
+		super();
+		this.employeeService = employeeService;
+	}
+
+
+
+
+
+
+	@GetMapping("/employees")
+	public ResponseEntity<List<Employee>> testfunc() {
+		List<Employee> employee=employeeService.getAllEmployees();
+		
+		return new ResponseEntity<List<Employee>>(employee,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("employees/{sid}")
+	public ResponseEntity<Employee> getEmployeeByID(@PathVariable(name="sid") int id) {
+		Employee employee = employeeService.getEmployeeById(id);
+	    if (employee != null) {
+	        return new ResponseEntity<Employee>(employee,HttpStatus.OK) ;
+	    } else {
+	        throw new EmployeeNotFoundException("employee not found with ID: " + id);
+	    }
+	}
+
+	
+	@PutMapping("/employees")
+	 public ResponseEntity<Employee> updateEmployee(@Valid @RequestBody Employee employee) {
+		Employee tempemployee = employeeService.getEmployeeById(employee.getId());
+	    if (tempemployee == null) {
+	      throw new EmployeeNotFoundException("Employee with ID " + employee.getId() + " is not found");
+	    }
+	    Employee updateEmployee= employeeService.save(employee);
+	    return new ResponseEntity<Employee>(updateEmployee, HttpStatus.OK);
+	  }
+	
+	@DeleteMapping("employees/{sid}")
+
+	 public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable(name = "sid") int id) {
+		Employee employee = employeeService.getEmployeeById(id);
+	    if (employee == null) {
+	      throw new EmployeeNotFoundException("Employee with ID " + id + " is not found");
+	    }
+	    employeeService.deleteEmployee(id);
+	    return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	  }
+	
+	
+	@PostMapping("/employees")
+	public ResponseEntity<Employee> addEmployee(@Valid @RequestBody Employee employee) {
+		Employee addedemployee=employeeService.save(employee);
+	    return new ResponseEntity<Employee>(addedemployee,HttpStatus.CREATED);
+	}
+	
+	
+	@GetMapping("employees/name/{name}")
+	public ResponseEntity<Employee> getEmployeeByName(@PathVariable(name = "name") String name){
+		Employee employee1=employeeService.getEmployeebyname(name);
+		if(employee1==null) {
+			throw new EmployeeNotFoundException("Employee with name "+name+" not found");
+		}
+		return new ResponseEntity<Employee>(employee1,HttpStatus.OK);
+	}
+	
+	@GetMapping("employees/email/{email}")
+	public ResponseEntity<Employee> getEmployeeByEmail(@PathVariable(name = "email") String email){
+		Employee employee1=employeeService.getEmployeebyemail(email);
+		if(employee1==null) {
+			throw new EmployeeNotFoundException("Employee with name "+email+" not found");
+		}
+		return new ResponseEntity<Employee>(employee1,HttpStatus.OK);
+	}
+	
+	@GetMapping("employees/allactive")
+	public ResponseEntity<List<Employee>> getEmployeeAllActive(){
+		List<Employee> employee1=employeeService.getEmployeeallActive();
+		
+		return new ResponseEntity<List<Employee>>(employee1,HttpStatus.OK);
+	}
+	
+	@GetMapping("employees/StartsWith/{StartsWith}")
+	
+	public ResponseEntity<List<Employee>> getEmployeeStartsWith(@PathVariable(name = "StartsWith") String StartsWith){
+		
+		List<Employee> employee1=employeeService.getemployeenameStartsWith(StartsWith);
+		
+		if(employee1==null) {
+			throw new EmployeeNotFoundException("Employee with name "+StartsWith+" not found");
+		}
+		return new ResponseEntity<List<Employee>>(employee1,HttpStatus.OK);
+	}
+    @GetMapping("employees/Count")
+    
+     public Integer getCount(){
+		
+		Integer employee1=employeeService.getCount();
+		if(employee1==null) {
+			throw new EmployeeNotFoundException("Employee with name letter not found");
+		}
+		
+		return employee1;
+	}
+    @GetMapping("employees/salaryGreaterThanAndDepartement")
+	public ResponseEntity<List<Employee>> getEmployeeSalaryGreaterThanAndDepartment(@RequestBody Employee employee) {
+		List<Employee> employees = employeeService.getEmployeeSalaryGreaterThanAndDepartment(employee.getSalary(),
+				employee.getDesignation());
+		return new ResponseEntity<List<Employee>>(employees, HttpStatus.OK);
+	}
+    @GetMapping("employees/countDepartment/{designation}")
+	public Integer getCountDepartment(@PathVariable(name = "designation") String designation){
+		
+		int  count=employeeService.getCountDepartment(designation);
+		if(count==0) {
+			throw new EmployeeNotFoundException("Employee with name letter not found");
+		}
+		return count;
+	}
+    @GetMapping("employees/salaryBetween/{startSalary}/{endSalary}")
+    
+    public ResponseEntity<List<Employee>>  getBetweenSalaryRange(@PathVariable(name="startSalary") double startSalary,@PathVariable(name="endSalary") double endSalary) {
+    	
+    	List<Employee>employee1 = employeeService.getBetweenSalaryRange(startSalary,endSalary);
+    	return new ResponseEntity<List<Employee>>(employee1, HttpStatus.OK);
+    
+    }
+    
+    
+    }
+    	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+
+

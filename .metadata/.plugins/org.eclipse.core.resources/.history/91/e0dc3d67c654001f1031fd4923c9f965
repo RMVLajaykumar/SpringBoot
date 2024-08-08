@@ -1,0 +1,131 @@
+package com.monocept.app.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.monocept.app.dto.AccountResponseDto;
+import com.monocept.app.dto.CustomerRequestDto;
+import com.monocept.app.dto.CustomerResponseDto;
+import com.monocept.app.entity.Account;
+import com.monocept.app.entity.Customer;
+import com.monocept.app.repository.CustomerRepository;
+
+@Service
+public class BankServiceImpl implements BankService{
+	CustomerRepository customerRepository;
+	
+
+	public BankServiceImpl(CustomerRepository customerRepository) {
+		super();
+		this.customerRepository = customerRepository;
+	}
+
+
+	@Override
+	public List<CustomerResponseDto> getAllCustomers() {
+		
+		return  convertCustomertoCustomerDto(customerRepository.findAll());
+	}
+
+
+	private List<CustomerResponseDto> convertCustomertoCustomerDto(List<Customer> all) {
+		List<CustomerResponseDto> customers=new ArrayList<>();
+		
+		for(Customer i:all) {
+			CustomerResponseDto customer=new CustomerResponseDto();
+			customer.setCustomer_id(i.getCustomer_id());
+			customer.setFirstName(i.getFirstName());
+			customer.setLastName(i.getLastName());
+			customer.setTotalBalance(i.getTotalBalance());
+			//customer.setAccounts(convertaccountsToaccountsDto(i.getAccounts()));
+			customers.add(customer);
+		}
+		return customers;
+		
+		
+	}
+
+
+	private List<AccountResponseDto> convertaccountsToaccountsDto(List<Account> accounts) {
+		
+		
+		//Customer customer=new CustomerResponseDto();
+
+		List<AccountResponseDto> accountResponseDto = new ArrayList<>();
+		
+		
+		if (accounts!= null) {
+			for (Account c :accounts) {
+				AccountResponseDto accountResponseDto1 = new AccountResponseDto();
+				accountResponseDto1.setAccountNumber(c.getAccountNumber());
+				accountResponseDto1.setBalance(c.getBalance());
+//			 accountResponseDto1.setCustomer(c.getCustomer());
+				accountResponseDto1.setBank(c.getBank());
+				
+				accountResponseDto.add(accountResponseDto1);
+			}
+			
+		}
+		return accountResponseDto;
+	}
+
+
+	@Override
+	public CustomerResponseDto addCustomer(CustomerRequestDto customerrequestdto) {
+		
+		Customer customer=convertcustomerRequestDtoToCustomer(customerrequestdto);
+		//customerRepository.save(customer)
+		return convertCustomerTocustomerResponseDto(customerRepository.save(customer));
+		
+	}
+
+
+	private CustomerResponseDto convertCustomerTocustomerResponseDto(Customer customer) {
+		CustomerResponseDto customer1 =  new CustomerResponseDto();
+		customer1.setCustomer_id(customer.getCustomer_id());
+		customer1.setFirstName(customer.getFirstName());
+		customer1.setLastName(customer.getLastName());
+		customer1.setTotalBalance(customer.getTotalBalance());
+		return customer1;
+	}
+
+
+	private Customer convertcustomerRequestDtoToCustomer(CustomerRequestDto customerrequestdto) {
+		Customer customer =  new Customer();
+		customer.setCustomer_id(customerrequestdto.getCustomer_id());
+		customer.setFirstName(customerrequestdto.getFirstName());
+		customer.setLastName(customerrequestdto.getLastName());
+		customer.setTotalBalance(customerrequestdto.getTotalBalance());
+		return customer;
+	}
+
+
+	@Override
+	public String deleteCustomerById(long id) {
+		
+		
+		Customer customer=customerRepository.findById(id).orElse(null);
+		if(customer!=null) {
+			customerRepository.deleteById(id);
+			
+		}
+		else {
+			return "cannot find id";
+		}
+		return "customer deleted Successfully";
+		
+	}
+
+
+	@Override
+	public CustomerResponseDto findCustomerByid(long id) {
+		Customer customer = customerRepository.findById(id).orElse(null);
+		 
+		return convertCustomerTocustomerResponseDto(customer);
+	}
+
+
+	
+}

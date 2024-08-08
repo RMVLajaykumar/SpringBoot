@@ -1,0 +1,109 @@
+package com.monocept.app.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.monocept.app.dto.BlogDTO;
+import com.monocept.app.dto.CommentDTO;
+import com.monocept.app.entity.Blog;
+import com.monocept.app.entity.Comment;
+import com.monocept.app.exception.BlogNotFoundException;
+
+import com.monocept.app.repository.BlogRepository;
+import com.monocept.app.util.PagedResponse;
+
+import jakarta.validation.Valid;
+
+
+@Service
+public class BlogServiceImpl implements BlogService {
+	private BlogRepository blogRepository;
+	
+
+	public BlogServiceImpl(BlogRepository blogRepository) {
+		super();
+		this.blogRepository = blogRepository;
+	}
+
+
+
+	
+
+
+	private List<BlogDTO> convertBlogToBlogDTO(List<Blog> content) {
+		List<BlogDTO> blogsDTO = new ArrayList();
+		for(Blog blog:content) {
+			BlogDTO blogDTO=new BlogDTO();
+			blogDTO.setId(blog.getId());
+			blogDTO.setTitle(blog.getTitle());
+			blogDTO.setCategory(blog.getCategory());
+			blogDTO.setData(blog.getData());
+			blogDTO.setPublishedDate(blog.getPublishedDate());
+			blogDTO.setPublished(blog.isPublished());
+			blog.setComment(convertCommentDTOsToComments(blogDTO.getComments()));
+			blogsDTO.add(blogDTO);
+		}
+		return blogsDTO;
+	}
+	private List<Comment> convertCommentDTOsToComments(List<CommentDTO> commentDTOs) {
+        List<Comment> comments = new ArrayList<>();
+        for (CommentDTO commentDTO : commentDTOs) {
+            Comment comment = new Comment();
+            comment.setId(commentDTO.getId());
+            comment.setDescription(commentDTO.getDescription());
+            comment.setBlog(commentDTO.getBlog());
+            comments.add(comment);
+        }
+        return comments;
+    }
+
+	
+
+	@Override
+	public PagedResponse<BlogDTO> getAllBlog(int page, int size, String sortBy, String direction) {
+		Sort sort = Sort.by(sortBy);
+		if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
+			sort = sort.descending();
+		} else {
+			sort = sort.ascending();
+		}
+		Pageable pageable = PageRequest.of(page, size, sort);
+		Page<Blog> blogPage = blogRepository.findAll(pageable);
+		List<Blog> blog=blogPage.getContent();
+		if(blog.isEmpty()) {
+			throw new BlogNotFoundException ("blog does not exist");
+		}
+		
+		List<BlogDTO> blogDTO = convertBlogToBlogDTO(blogPage.getContent());
+		return new PagedResponse<BlogDTO>(blogDTO, blogPage.getNumber(), blogPage.getSize(),
+				blogPage.getTotalElements(), blogPage.getTotalPages(), blogPage.isLast());
+
+	}
+
+	@Override
+	public Blog getBlogById(int id) {
+			return blogRepository.findById(id).orElse(null);
+		}
+
+
+
+
+
+
+	@Override
+	public BlogDTO save(@Valid BlogDTO employeedto) {
+		
+		return null;
+	}
+
+
+
+	
+	
+}

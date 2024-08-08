@@ -1,0 +1,27 @@
+package com.monocept.app.service;
+
+import java.util.List;
+
+import com.monocept.app.dto.AccountRequestDto;
+import com.monocept.app.dto.AccountResponseDto;
+import com.monocept.app.dto.CustomerRequestDto;
+import com.monocept.app.dto.CustomerResponseDto;
+import com.monocept.app.dto.TransactionResponseDto;
+
+public interface BankService {
+
+	List<CustomerResponseDto> getAllCustomers();
+
+	CustomerResponseDto addCustomer(CustomerRequestDto customerrequestdto);
+
+	String deleteCustomerById(long id);
+
+	CustomerResponseDto findCustomerByid(long id);
+
+	CustomerResponseDto addAccount(long cid, int bid);
+
+	TransactionResponseDto doTransaction(long senderAccountno, long receiverAccountno, double amount);
+
+	List<TransactionResponseDto> viewAllTransaction();
+
+}

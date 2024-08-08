@@ -1,0 +1,12 @@
+package com.monocept.app.service;
+
+import com.monocept.app.entity.Blog;
+import com.monocept.app.util.PagedResponse;
+
+public interface BlogService {
+
+	PagedResponse<Blog> getAllBlog(int page, int size, String sortBy, String direction);
+	
+	
+
+}

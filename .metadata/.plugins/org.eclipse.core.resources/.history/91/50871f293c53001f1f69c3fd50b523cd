@@ -1,0 +1,131 @@
+package com.monocept.app.service;
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.stereotype.Service;
+
+import com.monocept.app.entity.Course;
+import com.monocept.app.entity.Student;
+import com.monocept.app.repository.CourseRepository;
+import com.monocept.app.repository.StudentRepository;
+
+import jakarta.validation.Valid;
+
+@Service
+public class StudentCourseServiceImpl implements StudentCourseService{
+	
+	private StudentRepository studentRepository;
+	private CourseRepository courseRepository;
+	
+
+	public StudentCourseServiceImpl(StudentRepository studentRepository, CourseRepository courseRepository) {
+		super();
+		this.studentRepository = studentRepository;
+		this.courseRepository = courseRepository;
+	}
+
+
+	@Override
+	public Student addStudent(@Valid Student student) {
+		
+		return studentRepository.save(student);
+	}
+
+
+	@Override
+	public List<Student> getStudents() {
+		
+		return studentRepository.findAll();
+	}
+
+
+	@Override
+	public Student getStudentById(long id) {
+		
+		return studentRepository.findById(id).orElse(null);
+	}
+
+
+	@Override
+	public Student deleteStudentById(long id) {
+		
+		Student student=studentRepository.findById(id).orElse(null);
+		if(student!=null) {
+			studentRepository.deleteById(id);
+			
+		}
+		
+		return null;
+		
+	}
+
+
+	@Override
+	public Course addCourse(@Valid Course course) {
+		return courseRepository.save(course);
+	}
+
+
+	@Override
+	public List<Course> getCourses() {
+		return courseRepository.findAll();
+	}
+
+
+	@Override
+	public Course geCourseById(long id) {
+		
+		return courseRepository.findById(id).orElse(null);
+	}
+
+
+	@Override
+	public void deleteCourseById(long id) {
+		
+		courseRepository.deleteById(id);
+		
+	}
+
+
+	@Override
+	 public Student addCourseToStudent(long studentId, long courseId) {
+        Student student = studentRepository.findById(studentId).orElse(null);
+        if (student != null) {
+            Course course = courseRepository.findById(courseId).orElse(null);
+            if (course != null) {
+                student.addCourse(course);
+                studentRepository.save(student);
+                return student;
+            }
+        }
+        return null;
+    }
+
+
+	@Override
+	public Student deleteCourseToStudent(long studentId, long courseId) {
+		 Student student = studentRepository.findById(studentId).orElse(null);
+	        if (student != null) {
+	            Course course = courseRepository.findById(courseId).orElse(null);
+	            if (course != null) {
+	                student.removeCourse(course);
+	                studentRepository.save(student);
+	                return student;
+	            }
+	        }
+	        return null;
+	    }
+	}
+
+
+	
+
+
+	
+		
+		
+	
+	
+
+

@@ -1,0 +1,26 @@
+package com.monocept.app.service;
+
+import com.monocept.app.entity.Course;
+import com.monocept.app.repository.CourseRepository;
+import com.monocept.app.repository.InstructorRepository;
+
+public class CourseServiceImpl implements CourseService{
+	
+	private CourseRepository courseRepository;
+	private InstructorRepository instructorRepository;
+	
+
+	public CourseServiceImpl(CourseRepository courseRepository, InstructorRepository instructorRepository) {
+		super();
+		this.courseRepository = courseRepository;
+		this.instructorRepository = instructorRepository;
+	}
+
+
+	@Override
+	public Course save(Course course) {
+		
+		return courseRepository.save(course);
+	}
+
+}

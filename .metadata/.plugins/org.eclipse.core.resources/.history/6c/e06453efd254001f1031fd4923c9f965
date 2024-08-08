@@ -1,0 +1,22 @@
+package com.monocept.app.dto;
+
+
+import java.util.List;
+
+
+import lombok.Data;
+
+
+@Data
+public class BankResponseDto {
+	
+	private int bank_id;
+	
+	private String fullName;
+	
+	private String abbreviation;
+	
+	
+	private List<AccountResponseDto> accounts;
+
+}

@@ -1,0 +1,23 @@
+package com.monocept.app.dto;
+
+import lombok.Data;
+
+@Data
+public class CustomerResponseDto {
+private long customer_id;
+	
+	
+	private String firstName;
+	
+	
+	private String lastName;
+	
+	
+	private double totalBalance;
+	
+	private List<Account> accounts;
+	
+
+}
+
+}

@@ -1,0 +1,28 @@
+package com.monocept.app.service;
+
+import java.util.List;
+
+import com.monocept.app.entity.Course;
+import com.monocept.app.entity.Student;
+
+import jakarta.validation.Valid;
+
+public interface StudentCourseService {
+
+	Student addStudent(@Valid Student student);
+
+	List<Student> getStudents();
+
+	Student getStudentById(long id);
+
+	Student deleteStudentById(long id);
+
+	Course addCourse(@Valid Course course);
+
+	List<Course> getCourses();
+
+	Course geCourseById(long id);
+
+	public void deleteCourseById(long id);
+
+}

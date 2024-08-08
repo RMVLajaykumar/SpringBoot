@@ -1,0 +1,16 @@
+package com.monocept.app.service;
+
+import java.util.List;
+
+import com.monocept.app.dto.CustomerRequestDto;
+import com.monocept.app.dto.CustomerResponseDto;
+
+public interface BankService {
+
+	List<CustomerResponseDto> getAllCustomers();
+
+	CustomerResponseDto addCustomer(CustomerRequestDto customerrequestdto);
+
+	String deleteCustomerById(long id);
+
+}
