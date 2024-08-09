@@ -1,5 +1,6 @@
 package com.monocept.app.service;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.itextpdf.text.DocumentException;
 import com.monocept.app.dto.AccountRequestDto;
 import com.monocept.app.dto.AccountResponseDto;
 import com.monocept.app.dto.BankRequestDto;
@@ -41,32 +43,34 @@ import com.monocept.app.repository.BankRepository;
 import com.monocept.app.repository.CustomerRepository;
 import com.monocept.app.repository.TransactionRepository;
 import com.monocept.app.repository.UserRepository;
+import com.monocept.app.util.EmailUtil;
+import com.monocept.app.util.MailStructure;
+import com.monocept.app.util.PDFUtil;
 import com.monocept.app.util.PagedResponse;
 
+import jakarta.mail.MessagingException;
+
 @Service
-public class BankServiceImpl implements BankService{
+public class BankServiceImpl implements BankService {
 	CustomerRepository customerRepository;
-	
+
 	AccountRepository accountRepository;
 	BankRepository bankRepository;
 	TransactionRepository transactionRepository;
 	UserRepository userRepository;
-	 PasswordEncoder passwordEncoder;
+	PasswordEncoder passwordEncoder;
 
+	@Autowired
+	private JavaMailSender javaMailSender;
+
+	@Value("$(spring.mail.username)")
+	private String fromMail;
+	@Autowired
+	private PDFUtil pdfUtil=new PDFUtil();
 	
-
-
-	 @Autowired
-		private JavaMailSender javaMailSender;
-		
-		
-		@Value("$(spring.mail.username)")
-		private String fromMail ;
-		
-
+	@Autowired
+	private EmailUtil emailUtil;
 	
-
-
 	public BankServiceImpl(CustomerRepository customerRepository, AccountRepository accountRepository,
 			BankRepository bankRepository, TransactionRepository transactionRepository, UserRepository userRepository,
 			PasswordEncoder passwordEncoder) {
@@ -79,66 +83,55 @@ public class BankServiceImpl implements BankService{
 		this.passwordEncoder = passwordEncoder;
 	}
 
-
 	@Override
 	public PagedResponse<CustomerResponseDto> getAllCustomers(int page, int size, String sortBy, String direction) {
 		Sort sort = Sort.by(sortBy);
-        if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
-            sort = sort.descending();
-        } else {
-            sort = sort.ascending();
-        }
-        Pageable pageable = PageRequest.of(page, size, sort);
-        Page<Customer> customerPage = customerRepository.findAll(pageable);
-        
-        
-		  List<CustomerResponseDto> customerDto = convertCustomertoCustomerDto(customerPage.getContent());
-		  return new PagedResponse<>(customerDto, customerPage.getNumber(), customerPage.getSize(),
-				  customerPage.getTotalElements(), customerPage.getTotalPages(), customerPage.isLast());
+		if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
+			sort = sort.descending();
+		} else {
+			sort = sort.ascending();
+		}
+		Pageable pageable = PageRequest.of(page, size, sort);
+		Page<Customer> customerPage = customerRepository.findAll(pageable);
+
+		List<CustomerResponseDto> customerDto = convertCustomertoCustomerDto(customerPage.getContent());
+		return new PagedResponse<>(customerDto, customerPage.getNumber(), customerPage.getSize(),
+				customerPage.getTotalElements(), customerPage.getTotalPages(), customerPage.isLast());
 	}
 
-
 	private List<CustomerResponseDto> convertCustomertoCustomerDto(List<Customer> all) {
-		List<CustomerResponseDto> customers=new ArrayList<>();
-		
-		for(Customer i:all) {
-			CustomerResponseDto customer=new CustomerResponseDto();
+		List<CustomerResponseDto> customers = new ArrayList<>();
+
+		for (Customer i : all) {
+			CustomerResponseDto customer = new CustomerResponseDto();
 			customer.setCustomer_id(i.getCustomer_id());
 			customer.setFirstName(i.getFirstName());
 			customer.setLastName(i.getLastName());
-			customer.setTotalBalance(i.getTotalBalance());		
+			customer.setTotalBalance(i.getTotalBalance());
 			customer.setAccounts(convertAccounttoAccountResponseDto(i.getAccounts()));
 			customers.add(customer);
 		}
 		return customers;
 	}
 
-  
-
 	private List<AccountResponseDto> convertAccounttoAccountResponseDto(List<Account> accounts) {
-	
-	
-		List<AccountResponseDto> accountResponseDto=new ArrayList<>();
-		for(Account account:accounts) {
-			
-			accountResponseDto.add(	convertAccounttoAccountResponseDto(account));
-			
+
+		List<AccountResponseDto> accountResponseDto = new ArrayList<>();
+		for (Account account : accounts) {
+
+			accountResponseDto.add(convertAccounttoAccountResponseDto(account));
+
 		}
 		return accountResponseDto;
 	}
 
-
 	private AccountResponseDto convertAccounttoAccountResponseDto(Account account) {
-		
-		AccountResponseDto accountResponseDto= new AccountResponseDto();
+
+		AccountResponseDto accountResponseDto = new AccountResponseDto();
 		accountResponseDto.setAccountNumber(account.getAccountNumber());
 		accountResponseDto.setBalance(account.getBalance());
 		return accountResponseDto;
 	}
-
-
-
-
 
 //	@Override
 //	public String deleteCustomerById(long id) {
@@ -156,18 +149,15 @@ public class BankServiceImpl implements BankService{
 //		
 //	}
 
-
 	@Override
 	public CustomerResponseDto findCustomerByid(long id) {
 		Customer customer = customerRepository.findById(id).orElse(null);
-		if(customer==null) {
-			throw new CustomerNotFoundException("customer not found with id: "+id);
-		}
-		else {
-		return convertCustomerToCustomerResponseDto(customer);
+		if (customer == null) {
+			throw new CustomerNotFoundException("customer not found with id: " + id);
+		} else {
+			return convertCustomerToCustomerResponseDto(customer);
 		}
 	}
-
 
 	@Override
 	public CustomerResponseDto addAccount(long cid,int bid) {
@@ -193,6 +183,18 @@ public class BankServiceImpl implements BankService{
 				 }
 				 customer.setTotalBalance(total_salary);
 				 Customer save = customerRepository.save(customer);
+				 User user = customer.getUser();
+				 String subject = "Your Account Has Been Successfully Created at Pinnacle Bank!";
+				 		String emailBody = "Dear " + customer.getFirstName() + " " + customer.getLastName() + ",\n\n"
+				 		    + "We are pleased to inform you that your account has been successfully created with us!\n\n"
+				 		    + "Your Customer ID is " + customer.getCustomer_id() + ". You can view all the details of your account by logging into our application and sending a request to get customer details by your ID.\n\n"
+				 		    + "If you need any assistance or have any questions, our support team is ready to help. We are committed to providing you with the best banking experience.\n\n"
+				 		    + "Thank you for choosing Pinnacle bank. We look forward to supporting your financial needs.\n\n"
+				 		    + "Best regards,\n"
+				 		    + "Customer Relations Team\n"
+				 		    + "Pinnacle Bank";
+
+				 		sendEmail(user.getEmail(), subject,emailBody);
 				 return convertCustomerToCustomerResponseDto(save);
 				 
 			 }
@@ -204,23 +206,18 @@ public class BankServiceImpl implements BankService{
 	
 	}
 
-
 	private Account convertAcountResponseDtoToAccount(AccountRequestDto accountRequestDto) {
-		Account account=new Account();
+		Account account = new Account();
 		account.setAccountNumber(accountRequestDto.getAccountNumber());
 		account.setBalance(accountRequestDto.getBalance());
 		account.setBank(convertBankDtotoBank(accountRequestDto.getBankrequestDto()));
 		account.setCustomer(convertcustomerDtoToCustomer(accountRequestDto.getCustomerRequestDto()));
 		return account;
-		
+
 	}
 
-
-	
-
-
 	private Customer convertcustomerDtoToCustomer(CustomerRequestDto customerRequestDto) {
-	
+
 		Customer customer = new Customer();
 		customer.setCustomer_id(customerRequestDto.getCustomer_id());
 		customer.setFirstName(customerRequestDto.getFirstName());
@@ -228,7 +225,6 @@ public class BankServiceImpl implements BankService{
 		customer.setTotalBalance(customerRequestDto.getTotalBalance());
 		return customer;
 	}
-
 
 	private Bank convertBankDtotoBank(BankRequestDto bank) {
 		Bank bank1 = new Bank();
@@ -238,11 +234,8 @@ public class BankServiceImpl implements BankService{
 		return bank1;
 	}
 
-
-
 	@Override
-	public TransactionResponseDto doTransaction(long senderAccountNumber, long receiverAccountNumber,
-			double amount) {
+	public TransactionResponseDto doTransaction(long senderAccountNumber, long receiverAccountNumber, double amount) {
 		Optional<User> user = userRepository.findByEmail(getEmailFromSecurityContext());
 		List<Account> accounts = user.get().getCustomer().getAccounts();
 		for (Account account : accounts) {
@@ -275,42 +268,40 @@ public class BankServiceImpl implements BankService{
 				transaction.setSenderAccount(senderAccount);
 				transaction.setReceiverAccount(receiverAccount);
 				transaction.setTransactionType(TransactionType.Transfer);
-				return  convertTransactiontoTransactionDto(transactionRepository.save(transaction));
+				User senderUser=senderCustomer.getUser();
+				User receiverUser=receiverCustomer.getUser();
+				sendMailToTheUsers(senderUser,receiverUser,senderCustomer,senderAccountNumber,transaction,receiverCustomer,receiverAccountNumber);
+				return convertTransactiontoTransactionDto(transactionRepository.save(transaction));
 			}
 		}
 		throw new NoRecordFoundException("Your account number is wrong");
 
 	}
 
-
 	private TransactionResponseDto convertTransactiontoTransactionDto(Transaction save) {
-		
-		TransactionResponseDto transactionResponseDto=new TransactionResponseDto();
+
+		TransactionResponseDto transactionResponseDto = new TransactionResponseDto();
 		transactionResponseDto.setAmount(save.getAmount());
 		transactionResponseDto.setId(save.getId());
 		transactionResponseDto.setSenderAccount(convertAccountTransactionToAccountResponseDto(save.getSenderAccount()));
-		transactionResponseDto.setReceiverAccount(convertAccountTransactionToAccountResponseDto(save.getReceiverAccount()));
+		transactionResponseDto
+				.setReceiverAccount(convertAccountTransactionToAccountResponseDto(save.getReceiverAccount()));
 		transactionResponseDto.setTransactionDate(save.getTransactionDate());
 		transactionResponseDto.setTransactionType(save.getTransactionType());
-		
+
 		return transactionResponseDto;
-		
+
 	}
 
-
-	
-
-
 	private List<TransactionResponseDto> convertTransactiontoTransactionDto(List<Transaction> all) {
-		
-		List<TransactionResponseDto> transactionResponseDto=new ArrayList<>();
-		for(Transaction t:all) {
+
+		List<TransactionResponseDto> transactionResponseDto = new ArrayList<>();
+		for (Transaction t : all) {
 			transactionResponseDto.add(convertTransactiontoTransactionDto(t));
-			
+
 		}
 		return transactionResponseDto;
 	}
-
 
 	@Override
 	public PagedResponse<TransactionResponseDto> viewAllTransaction(LocalDateTime fromDate, LocalDateTime toDate,
@@ -327,8 +318,7 @@ public class BankServiceImpl implements BankService{
 		System.out.println("Page request: " + pageRequest);
 		Page<Transaction> pagedResponse = transactionRepository.findAllByTransactionDateBetween(fromDate, toDate,
 				pageRequest);
-		System.out.println(
-				"Fetched transactions: " + convertTransactiontoTransactionDto(pagedResponse.getContent()));
+		System.out.println("Fetched transactions: " + convertTransactiontoTransactionDto(pagedResponse.getContent()));
 		PagedResponse<TransactionResponseDto> response = new PagedResponse<>(
 				convertTransactiontoTransactionDto(pagedResponse.getContent()), pagedResponse.getNumber(),
 				pagedResponse.getSize(), pagedResponse.getTotalElements(), pagedResponse.getTotalPages(),
@@ -336,40 +326,31 @@ public class BankServiceImpl implements BankService{
 		return response;
 	}
 
-
-	
-
-
-	private List<TransactionResponseDto> covertPassbooktopassbookDto(List<Transaction> viewPassbook,long accountNo) {
-		List<TransactionResponseDto> transactionResponseDtos=new ArrayList<>();
-		for(Transaction t :viewPassbook) {
-			transactionResponseDtos.add(covertPassbooktopassbookDto(t,accountNo));
+	private List<TransactionResponseDto> covertPassbooktopassbookDto(List<Transaction> viewPassbook, long accountNo) {
+		List<TransactionResponseDto> transactionResponseDtos = new ArrayList<>();
+		for (Transaction t : viewPassbook) {
+			transactionResponseDtos.add(covertPassbooktopassbookDto(t, accountNo));
 		}
 		return transactionResponseDtos;
 	}
 
+	private TransactionResponseDto covertPassbooktopassbookDto(Transaction t, long accountNo) {
+		TransactionResponseDto transactionDto = new TransactionResponseDto();
 
-	private TransactionResponseDto covertPassbooktopassbookDto(Transaction t,long accountNo) {
-		 TransactionResponseDto transactionDto=new TransactionResponseDto();
-		 
-		 if((t.getSenderAccount().getAccountNumber())==accountNo) {
-			 transactionDto.setTransactionType(TransactionType.Debit);
-			 
-		 }
-		 else {
-			 transactionDto.setTransactionType(TransactionType.Credit);
-		 }
-		 
-		 transactionDto.setAmount(t.getAmount());
-		 transactionDto.setId(t.getId());
-		 transactionDto.setReceiverAccount(convertAccounttoAccountResponseDto(t.getReceiverAccount()));
-		 transactionDto.setSenderAccount(convertAccounttoAccountResponseDto(t.getSenderAccount()));
-		 transactionDto.setTransactionDate(t.getTransactionDate());
+		if ((t.getSenderAccount().getAccountNumber()) == accountNo) {
+			transactionDto.setTransactionType(TransactionType.Debit);
+
+		} else {
+			transactionDto.setTransactionType(TransactionType.Credit);
+		}
+
+		transactionDto.setAmount(t.getAmount());
+		transactionDto.setId(t.getId());
+		transactionDto.setReceiverAccount(convertAccounttoAccountResponseDto(t.getReceiverAccount()));
+		transactionDto.setSenderAccount(convertAccounttoAccountResponseDto(t.getSenderAccount()));
+		transactionDto.setTransactionDate(t.getTransactionDate());
 		return transactionDto;
 	}
-
-
-	
 
 	@Override
 	public UserResponseDto createCustomer(CustomerRequestDto customerRequestDto, long userID) {
@@ -382,24 +363,21 @@ public class BankServiceImpl implements BankService{
 		}
 		Customer customer = convertCustomerRequestToCustomer(customerRequestDto);
 		user.setCustomer(customer);
-		String subject="Welcome to Spring Bank ! Your Customer ID Has Been Successfully Created";
-		 String emailBody = "Dear "+customerRequestDto.getFirstName()+" "+customerRequestDto.getLastName()+",\n\n"
-			    + "Welcome to Pinnacle Bank! We are thrilled to have you with us.\n\n"
-			    + "We're excited to let you know that your Customer ID has been created successfully. Our team is currently working on finalizing the setup of your account. You should see your account fully active within the next few days.\n\n"
-			    + "In the meantime, feel free to explore the many features and services available to you. Our goal is to provide you with a smooth and enjoyable banking experience.\n\n"
-			    + "If you have any questions or need help, don’t hesitate to contact our support team. We’re here to assist you every step of the way.\n\n"
-			    + "Thank you for choosing Pinnacle Bank. We’re looking forward to supporting you in your financial journey.\n\n"
-			    + "Best regards,\n"
-			    + "[Your Name]\n"
-			    + "Customer Relations Team\n"
-			    + "Pinnacle Bank";
+		String subject = "Welcome to Pinnacle Bank ! Your Customer ID Has Been Successfully Created";
+		String emailBody = "Dear " + customerRequestDto.getFirstName() + " " + customerRequestDto.getLastName()
+				+ ",\n\n" + "Welcome to Pinnacle Bank! We are thrilled to have you with us.\n\n"
+				+ "We're excited to let you know that your Customer ID has been created successfully. Our team is currently working on finalizing the setup of your account. You should see your account fully active within the next few days.\n\n"
+				+ "In the meantime, feel free to explore the many features and services available to you. Our goal is to provide you with a smooth and enjoyable banking experience.\n\n"
+				+ "If you have any questions or need help, don’t hesitate to contact our support team. We’re here to assist you every step of the way.\n\n"
+				+ "Thank you for choosing Pinnacle Bank. We’re looking forward to supporting you in your financial journey.\n\n"
+				+ "Best regards,\n" + "[Your Name]\n" + "Customer Relations Team\n" + "Pinnacle Bank";
 
-		sendEmail(user.getEmail(),subject,emailBody);
+		sendEmail(user.getEmail(), subject, emailBody);
 		return convertUserToUserDto(userRepository.save(user));
 	}
 
 	private void sendEmail(String toMail, String subject, String emailBody) {
-		SimpleMailMessage mailMessage=new SimpleMailMessage();
+		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setFrom(fromMail);
 		mailMessage.setTo(toMail);
 		mailMessage.setText(emailBody);
@@ -407,9 +385,8 @@ public class BankServiceImpl implements BankService{
 		javaMailSender.send(mailMessage);
 	}
 
-
 	private UserResponseDto convertUserToUserDto(User save) {
-		UserResponseDto responseDto=new UserResponseDto();
+		UserResponseDto responseDto = new UserResponseDto();
 		responseDto.setId(save.getId());
 		responseDto.setRoles(save.getRoles());
 		responseDto.setCustomerResponseDto(convertCustomerToCustomerResponseDto(save.getCustomer()));
@@ -431,33 +408,36 @@ public class BankServiceImpl implements BankService{
 		Customer customer = new Customer();
 		customer.setFirstName(customerRequestDto.getFirstName());
 		customer.setLastName(customerRequestDto.getLastName());
-		customer.setTotalBalance(customerRequestDto.getTotalBalance());	
+		customer.setTotalBalance(customerRequestDto.getTotalBalance());
 		return customer;
 	}
-
 
 	@Override
 	public String updateProfile(ProfileRequestDto profileRequestDto) {
 		User user = userRepository.findByEmail(getEmailFromSecurityContext()).orElse(null);
-		if(user.getCustomer()==null) {
+		if (user.getCustomer() == null) {
 			throw new NoRecordFoundException("Cannot update the customer details still you havn't have customer id");
 		}
 		Customer customer = user.getCustomer();
-		if(profileRequestDto.getEmail()!=null && !profileRequestDto.getEmail().isEmpty() && profileRequestDto.getEmail().length()!=0) {
-			user.setEmail(profileRequestDto.getEmail());  
+		if (profileRequestDto.getEmail() != null && !profileRequestDto.getEmail().isEmpty()
+				&& profileRequestDto.getEmail().length() != 0) {
+			user.setEmail(profileRequestDto.getEmail());
 		}
-		if(profileRequestDto.getFirstName()!=null && !profileRequestDto.getFirstName().isEmpty() && profileRequestDto.getFirstName().length()!=0) {
+		if (profileRequestDto.getFirstName() != null && !profileRequestDto.getFirstName().isEmpty()
+				&& profileRequestDto.getFirstName().length() != 0) {
 			customer.setFirstName(profileRequestDto.getFirstName());
 		}
-		if(profileRequestDto.getLastName()!=null && !profileRequestDto.getLastName().isEmpty() && profileRequestDto.getLastName().length()!=0) {
+		if (profileRequestDto.getLastName() != null && !profileRequestDto.getLastName().isEmpty()
+				&& profileRequestDto.getLastName().length() != 0) {
 			customer.setLastName(profileRequestDto.getLastName());
 		}
-		if(profileRequestDto.getPassword()!=null && !profileRequestDto.getPassword().isEmpty() && profileRequestDto.getPassword().length()!=0) {
+		if (profileRequestDto.getPassword() != null && !profileRequestDto.getPassword().isEmpty()
+				&& profileRequestDto.getPassword().length() != 0) {
 			user.setPassword(passwordEncoder.encode(profileRequestDto.getPassword()));
 		}
 
 		userRepository.save(user);
-		
+
 		return "user succesfully updated";
 	}
 
@@ -470,10 +450,9 @@ public class BankServiceImpl implements BankService{
 		return null;
 	}
 
-
 	@Override
-	public PagedResponse<TransactionResponseDto> viewPassbook(long accountNumber, LocalDateTime from, LocalDateTime to, int page,
-			int size, String sortBy, String direction) {
+	public PagedResponse<TransactionResponseDto> viewPassbook(long accountNumber, LocalDateTime from, LocalDateTime to,
+			int page, int size, String sortBy, String direction) throws DocumentException, IOException, MessagingException {
 		Sort sort = Sort.by(sortBy);
 		if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
 			sort.descending();
@@ -483,16 +462,31 @@ public class BankServiceImpl implements BankService{
 
 		String email = getEmailFromSecurityContext();
 		Optional<User> user = userRepository.findByEmail(email);
-		if(user.get().getCustomer()==null) {
+		if (user.get().getCustomer() == null) {
 			throw new NoRecordFoundException("still you havn't have customer id");
 		}
 		List<Account> accounts = user.get().getCustomer().getAccounts();
 		for (Account acc : accounts) {
 			if (acc.getAccountNumber() == accountNumber) {
 				Account account = accountRepository.findById(accountNumber).orElse(null);
-		PageRequest pageRequest = PageRequest.of(page, size, sort);
-				Page<Transaction> pagedResponse = transactionRepository.viewPassbook(account,from,to,pageRequest);
-
+				PageRequest pageRequest = PageRequest.of(page, size, sort);
+				Page<Transaction> pagedResponse = transactionRepository.viewPassbook(account, from, to, pageRequest);
+				
+				String passbookSubject = "Your Passbook from pinacle bank";
+				String passbookBody = "Dear " + user.get().getCustomer().getFirstName() + " "
+						+ user.get().getCustomer().getLastName() + ",\n\n"
+						+ "Attached to this email is your passbook for your recent transactions.\n\n"
+						+ "You can review the details of your transactions for the specified period. If you have any questions or need further assistance, please do not hesitate to reach out to us.\n\n"
+						+ "Thank you for choosing Spring Bank Application. We are committed to providing you with the best service possible.\n\n"
+						+ "Best regards,\n" + "Customer Relations Team\n" + "pinacle bank";
+				MailStructure mailStructure = new MailStructure();
+				mailStructure.setToEmail(user.get().getEmail());
+				mailStructure.setEmailBody(passbookBody);
+				mailStructure.setSubject(passbookSubject);
+				List<TransactionResponseDto> responseDTO = convertTransactiontoTransactionDto(pagedResponse.getContent(),accountNumber);
+				byte[] passbookPdf = pdfUtil
+						.generatePassbookPdf(user,responseDTO);
+				emailUtil.sendEmailWithAttachment(mailStructure, passbookPdf);
 				return new PagedResponse<TransactionResponseDto>(
 						convertTransactiontoTransactionDto(pagedResponse.getContent(), accountNumber),
 						pagedResponse.getNumber(), pagedResponse.getSize(), pagedResponse.getTotalElements(),
@@ -500,10 +494,8 @@ public class BankServiceImpl implements BankService{
 			}
 		}
 		throw new NoRecordFoundException("Please give valid account number");
-		
 
 	}
-
 
 	private List<TransactionResponseDto> convertTransactiontoTransactionDto(List<Transaction> passbook,
 			long accountNumber) {
@@ -511,15 +503,18 @@ public class BankServiceImpl implements BankService{
 		for (Transaction transaction : passbook) {
 			TransactionResponseDto responseDto = new TransactionResponseDto();
 			responseDto.setAmount(transaction.getAmount());
-			if(transaction.getReceiverAccount()!=null) {
-				responseDto.setReceiverAccount(convertAccountTransactionToAccountResponseDto(transaction.getReceiverAccount()));				
+			if (transaction.getReceiverAccount() != null) {
+				responseDto.setReceiverAccount(
+						convertAccountTransactionToAccountResponseDto(transaction.getReceiverAccount()));
 			}
-			if(transaction.getSenderAccount()!=null) {
-				responseDto.setSenderAccount(convertAccountTransactionToAccountResponseDto(transaction.getSenderAccount()));				
+			if (transaction.getSenderAccount() != null) {
+				responseDto.setSenderAccount(
+						convertAccountTransactionToAccountResponseDto(transaction.getSenderAccount()));
 			}
 			responseDto.setId(transaction.getId());
 			responseDto.setTransactionDate(transaction.getTransactionDate());
-			if (transaction.getSenderAccount()!=null && transaction.getSenderAccount().getAccountNumber() == accountNumber) {
+			if (transaction.getSenderAccount() != null
+					&& transaction.getSenderAccount().getAccountNumber() == accountNumber) {
 				responseDto.setTransactionType(TransactionType.Debit);
 			} else {
 				responseDto.setTransactionType(TransactionType.Credit);
@@ -528,33 +523,44 @@ public class BankServiceImpl implements BankService{
 		}
 		return list;
 	}
-	
-	
+
 	@Override
 	public AccountResponseDto depositAmount(long accountNumber, double amount) {
 		User user = userRepository.findByEmail(getEmailFromSecurityContext()).orElse(null);
 		List<Account> accounts = user.getCustomer().getAccounts();
 		Customer customer = user.getCustomer();
-		if(customer==null) {
+		if (customer == null) {
 			throw new NoRecordFoundException("Customer not associated with the user");
 		}
-		for(Account account:accounts) {
-			if(account.getAccountNumber()==accountNumber) {
-				account.setBalance(account.getBalance()+amount);
+		for (Account account : accounts) {
+			if (account.getAccountNumber() == accountNumber) {
+				account.setBalance(account.getBalance() + amount);
 				accountRepository.save(account);
-				Double totalBalance=accountRepository.getTotalBalance(customer);
+				Double totalBalance = accountRepository.getTotalBalance(customer);
 				customer.setTotalBalance(totalBalance);
 				customerRepository.save(customer);
-				Transaction transaction=new Transaction();
+				Transaction transaction = new Transaction();
 				transaction.setAmount(amount);
 				transaction.setReceiverAccount(account);
 				transaction.setTransactionType(TransactionType.Transfer);
 				transactionRepository.save(transaction);
+				String subject = "Notification: Your Account Has Been Credited at Pinnacle Bank!";
+				String emailBody = "Dear " + customer.getFirstName() + " " + customer.getLastName() + ",\n\n"
+				    + "We are pleased to notify you that your account has been credited with an amount of " + transaction.getAmount() + " on " + LocalDateTime.now() + ".\n\n"
+				    + "Account Number: ######" +accountNumber+ "\n\n"
+				    + "You can view the details of this transaction by logging into our application and checking your account transactions.\n\n"
+				    + "If you have any questions or need further assistance, please contact our support team. We are here to ensure you have the best banking experience.\n\n"
+				    + "Thank you for banking with Spring Pinnacle Bank. We look forward to continuing to support your financial needs.\n\n"
+				    + "Best regards,\n"
+				    + "Customer Relations Team\n"
+				    + "Pinnacle Bank";
+
+				sendEmail(user.getEmail(), subject, emailBody);
 				return convertAccounttoAccountResponseDto(account);
 			}
 		}
 		throw new NoRecordFoundException("Please check account number properly");
-		
+
 	}
 
 	@Override
@@ -563,33 +569,26 @@ public class BankServiceImpl implements BankService{
 		return convertAccounttoAccountResponseDto(user.getCustomer().getAccounts());
 	}
 
-
-	
-
-
-	
-	
 	private AccountResponseDto convertAccountTransactionToAccountResponseDto(Account account) {
 		AccountResponseDto accountResponseDTO = new AccountResponseDto();
-		if(account!=null) {
+		if (account != null) {
 			accountResponseDTO.setAccountNumber(account.getAccountNumber());
 		}
 		return accountResponseDTO;
 	}
 
-
 	@Override
 	public String deleteCustomer(long customerID) {
 		Customer customer = customerRepository.findById(customerID).orElse(null);
-		if(customer==null) {
-			throw new NoRecordFoundException("Customer not found with the id "+customerID);
+		if (customer == null) {
+			throw new NoRecordFoundException("Customer not found with the id " + customerID);
 		}
-		if(!customer.isActive()) {
+		if (!customer.isActive()) {
 			throw new NoRecordFoundException("Customer is already deleted");
 		}
 		customer.setActive(false);
 		List<Account> accounts = customer.getAccounts();
-		for(Account account:accounts) {
+		for (Account account : accounts) {
 			account.setActive(false);
 		}
 		customerRepository.save(customer);
@@ -599,10 +598,10 @@ public class BankServiceImpl implements BankService{
 	@Override
 	public String activateCustomer(long customerID) {
 		Customer customer = customerRepository.findById(customerID).orElse(null);
-		if(customer==null) {
-			throw new NoRecordFoundException("Customer not found with the id "+customerID);
+		if (customer == null) {
+			throw new NoRecordFoundException("Customer not found with the id " + customerID);
 		}
-		if(customer.isActive()) {
+		if (customer.isActive()) {
 			throw new NoRecordFoundException("Customer is already active");
 		}
 		customer.setActive(true);
@@ -613,10 +612,10 @@ public class BankServiceImpl implements BankService{
 	@Override
 	public String deleteAccount(long accountNumber) {
 		Account account = accountRepository.findById(accountNumber).orElse(null);
-		if(account==null) {
-			throw new NoRecordFoundException("Account not found with the account number "+accountNumber);
+		if (account == null) {
+			throw new NoRecordFoundException("Account not found with the account number " + accountNumber);
 		}
-		if(!account.isActive()) {
+		if (!account.isActive()) {
 			throw new NoRecordFoundException("Account is already deleted");
 		}
 		account.setActive(false);
@@ -627,10 +626,10 @@ public class BankServiceImpl implements BankService{
 	@Override
 	public String activateAccount(long accountNumber) {
 		Account account = accountRepository.findById(accountNumber).orElse(null);
-		if(account==null) {
-			throw new NoRecordFoundException("Account not found with the account number "+accountNumber);
+		if (account == null) {
+			throw new NoRecordFoundException("Account not found with the account number " + accountNumber);
 		}
-		if(account.isActive()) {
+		if (account.isActive()) {
 			throw new NoRecordFoundException("Account is already active");
 		}
 		account.setActive(true);
@@ -643,8 +642,8 @@ public class BankServiceImpl implements BankService{
 		String email = getEmailFromSecurityContext();
 		Optional<User> user = userRepository.findByEmail(email);
 		List<Account> accounts = user.get().getCustomer().getAccounts();
-		for(Account account:accounts) {
-			if(account.getAccountNumber()==accountNumber && isAccountActive(account)) {
+		for (Account account : accounts) {
+			if (account.getAccountNumber() == accountNumber && isAccountActive(account)) {
 				return convertAccounttoAccountResponseDto(account);
 			}
 		}
@@ -652,15 +651,37 @@ public class BankServiceImpl implements BankService{
 	}
 
 	private boolean isAccountActive(Account account) {
-		if(!account.isActive()) {
+		if (!account.isActive()) {
 			return false;
 		}
 		return true;
 	}
 	
+private void sendMailToTheUsers(User senderUser, User receiverUser, Customer senderCustomer, long senderAccountNumber, Transaction transaction, Customer receiverCustomer, long receiverAccountNumber) {
+		
+		String debitedsubject = "Notification: Your Account Has Been Debited at Pinnacle Bank!";
+		String debitedBody = "Dear " + senderCustomer.getFirstName() + " " + senderCustomer.getLastName() + ",\n\n"
+		    + "We want to inform you that your account has been debited by an amount of " + transaction.getAmount() + " on " + transaction.getTransactionDate() + ".\n\n"
+		    + "Account Number: ######" + senderAccountNumber + "\n\n"
+		    + "If you did not authorize this transaction or have any concerns about it, please contact our support team immediately. We are here to assist you and ensure your account's security.\n\n"
+		    + "You can view the details of this transaction by logging into our application and checking your account transactions.\n\n"
+		    + "Thank you for banking with Pinnacle Bank. We are dedicated to supporting your financial needs.\n\n"
+		    + "Best regards,\n"
+		    + "Customer Relations Team\n"
+		    + "Pinnacle Bank";
+		sendEmail(senderUser.getEmail(), debitedsubject, debitedBody);
+		String creditedsubject = "Notification: Your Account Has Been Credited at Pinnacle Bank!";
+		String creditedBody = "Dear " + receiverCustomer.getFirstName() + " " + receiverCustomer.getLastName() + ",\n\n"
+		    + "We are pleased to notify you that your account has been credited with an amount of " + transaction.getAmount() + " on " + transaction.getTransactionDate() + ".\n\n"
+		    + "Account Number: ######" + receiverAccountNumber + "\n\n"
+		    + "You can view the details of this transaction by logging into our application and checking your account transactions.\n\n"
+		    + "If you have any questions or need further assistance, please contact our support team. We are here to ensure you have the best banking experience.\n\n"
+		    + "Thank you for banking with Pinnacle Bank. We look forward to continuing to support your financial needs.\n\n"
+		    + "Best regards,\n"
+		    + "Customer Relations Team\n"
+		    + "Pinnacle Bank";
+		sendEmail(receiverUser.getEmail(),creditedsubject,creditedBody);
+		
+	}
 
-	
-
-
-	
 }

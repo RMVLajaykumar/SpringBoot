@@ -46,7 +46,6 @@
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonInclude"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.monocept.app.exception.NoRecordFoundException"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
@@ -55,4 +54,5 @@
     <fullyQualifiedTypeName name="com.monocept.app.dto.TransactionResponseDto"/>
     <fullyQualifiedTypeName name="com.monocept.app.entity.TransactionType"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonInclude"/>
 </qualifiedTypeNameHistroy>

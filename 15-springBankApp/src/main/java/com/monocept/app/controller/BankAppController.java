@@ -1,5 +1,6 @@
 package com.monocept.app.controller;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itextpdf.text.DocumentException;
 import com.monocept.app.dto.AccountResponseDto;
 import com.monocept.app.dto.CustomerRequestDto;
 import com.monocept.app.dto.CustomerResponseDto;
@@ -25,6 +27,8 @@ import com.monocept.app.dto.UserRequestDto;
 import com.monocept.app.dto.UserResponseDto;
 import com.monocept.app.service.BankService;
 import com.monocept.app.util.PagedResponse;
+
+import jakarta.mail.MessagingException;
 
 @RestController
 @RequestMapping("/api/auth/customer")
@@ -70,6 +74,7 @@ public class BankAppController {
 	}
 
 	@PostMapping("{cid}/account/{bid}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<CustomerResponseDto> addAccount(@PathVariable(name = "cid") long cid,
 			@PathVariable(name = "bid") int bid) {
 		return new ResponseEntity<CustomerResponseDto>(bankService.addAccount(cid, bid), HttpStatus.OK);
@@ -94,7 +99,7 @@ public class BankAppController {
 			@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "5") int size,
 			@RequestParam(name = "sortBy", defaultValue = "id") String sortBy,
-			@RequestParam(name = "direction", defaultValue = "asc") String direction) {
+			@RequestParam(name = "direction", defaultValue = "asc") String direction) throws DocumentException, IOException, MessagingException {
 		LocalDateTime fromDate = LocalDateTime.parse(from);
 		LocalDateTime toDate = LocalDateTime.parse(to);
 		PagedResponse<TransactionResponseDto> passbook = bankService.viewPassbook(accountNumber, fromDate, toDate, page,
@@ -145,30 +150,30 @@ public class BankAppController {
 	
 	@PutMapping("admin/customers/active/{customerID}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String activatExistingCustomer(@PathVariable(name = "customerID")long customerID) {
-		return bankService.activateCustomer(customerID);
+	public ResponseEntity<String> activatExistingCustomer(@PathVariable(name = "customerID")long customerID) {
+		return new ResponseEntity<String>( bankService.activateCustomer(customerID),HttpStatus.OK);
 	}
 	@DeleteMapping("admin/customers/accounts/{accountNumber}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String deleteAccount(@PathVariable(name = "accountNumber")long accountNumber) {
-		return bankService.deleteAccount(accountNumber);
+	public ResponseEntity<String>  deleteAccount(@PathVariable(name = "accountNumber")long accountNumber) {
+		return new ResponseEntity<String>(bankService.deleteAccount(accountNumber),HttpStatus.OK);
 	}
 	@PutMapping("admin/customers/accounts/active/{accountNumber}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String activateExistingAccount(@PathVariable(name = "accountNumber")long accountNumber) {
-		return bankService.activateAccount(accountNumber);
+	public ResponseEntity<String> activateExistingAccount(@PathVariable(name = "accountNumber")long accountNumber) {
+		return new ResponseEntity<String>(bankService.activateAccount(accountNumber),HttpStatus.OK);
 	}
 	
-	@GetMapping("customers/accounts/{accountNumber}/view-balance")
+	@GetMapping("accounts/{accountNumber}/view-balance")
 	@PreAuthorize("hasRole('USER')")
-	public AccountResponseDto viewBalance(@PathVariable(name = "accountNumber")long accountNumber) {
-		return bankService.viewBalance(accountNumber);
+	public ResponseEntity<AccountResponseDto> viewBalance(@PathVariable(name = "accountNumber")long accountNumber) {
+		return new ResponseEntity<AccountResponseDto>(bankService.viewBalance(accountNumber),HttpStatus.OK);
 	}
 	
 	@DeleteMapping("admin/customers/{customerID}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String deleteCustomer(@PathVariable(name = "customerID")long customerID) {
-		return bankService.deleteCustomer(customerID);
+	public ResponseEntity<String>  deleteCustomer(@PathVariable(name = "customerID")long customerID) {
+		return new ResponseEntity<String>(bankService.deleteCustomer(customerID),HttpStatus.OK);
 	}
 	
 	

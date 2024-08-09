@@ -1,9 +1,11 @@
 package com.monocept.app.service;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.itextpdf.text.DocumentException;
 import com.monocept.app.dto.AccountRequestDto;
 import com.monocept.app.dto.AccountResponseDto;
 import com.monocept.app.dto.CustomerRequestDto;
@@ -13,6 +15,8 @@ import com.monocept.app.dto.TransactionResponseDto;
 import com.monocept.app.dto.UserRequestDto;
 import com.monocept.app.dto.UserResponseDto;
 import com.monocept.app.util.PagedResponse;
+
+import jakarta.mail.MessagingException;
 
 public interface BankService {
 
@@ -30,7 +34,7 @@ public interface BankService {
 
 	PagedResponse<TransactionResponseDto> viewAllTransaction(LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String direction);
 
-	PagedResponse<TransactionResponseDto> viewPassbook(long accountNo, LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String direction);
+	PagedResponse<TransactionResponseDto> viewPassbook(long accountNo, LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String direction) throws DocumentException, IOException, MessagingException;
 
 	UserResponseDto createCustomer(CustomerRequestDto customerRequestDto, long userID);
 
