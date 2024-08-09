@@ -5184,3 +5184,293 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2024-08-09 01:49:42,151 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-08-09 01:49:42,152 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-08-09 01:49:42,156 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 09:57:23,225 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-08-09 09:57:38,078 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 09:57:38,119 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 09:57:38,135 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 10:06:23,045 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:23,061 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:23,072 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 10:06:34,936 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:34,944 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:34,953 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 10:06:45,749 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:45,757 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:06:45,764 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 10:10:47,438 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:10:47,445 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:10:47,453 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 10:32:49,438 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:32:49,454 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 10:32:49,462 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 15:06:03,323 [Worker-52: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 15:06:03,719 [Worker-52: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 15:06:03,735 [Worker-52: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 15:06:42,246 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:06:42,248 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:06:42,254 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 15:11:33,212 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 15:11:33,294 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 15:11:33,302 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 15:11:34,815 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:11:34,817 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:11:34,821 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 15:11:35,898 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:11:35,900 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 15:11:35,913 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:19:41,287 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:19:41,419 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:19:41,426 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:19:42,516 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:19:42,517 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:19:42,523 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:21:45,554 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:21:45,658 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:21:45,663 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:21:46,770 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:21:46,772 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:21:46,780 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:23:22,302 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:23:22,321 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:23:22,329 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:23:23,502 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:23:23,504 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:23:23,510 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:26:50,350 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:26:50,423 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:26:50,430 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:26:51,538 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:26:51,539 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:26:51,544 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:28:04,026 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:28:04,102 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 16:28:04,107 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 16:28:05,174 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:28:05,175 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 16:28:05,181 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 18:13:13,810 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\pom.xml.
+2024-08-09 18:13:15,300 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.pom
+2024-08-09 18:13:15,364 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.pom
+2024-08-09 18:13:15,404 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi/2.6.0/springdoc-openapi-2.6.0.pom
+2024-08-09 18:13:15,467 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi/2.6.0/springdoc-openapi-2.6.0.pom
+2024-08-09 18:13:15,514 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.3.0/spring-boot-starter-parent-3.3.0.pom
+2024-08-09 18:13:15,576 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/3.3.0/spring-boot-starter-parent-3.3.0.pom
+2024-08-09 18:13:15,621 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.3.0/spring-boot-dependencies-3.3.0.pom
+2024-08-09 18:13:15,729 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.3.0/spring-boot-dependencies-3.3.0.pom
+2024-08-09 18:13:15,838 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.21/groovy-bom-4.0.21.pom
+2024-08-09 18:13:16,487 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.21/groovy-bom-4.0.21.pom
+2024-08-09 18:13:16,544 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/infinispan/infinispan-bom/15.0.4.Final/infinispan-bom-15.0.4.Final.pom
+2024-08-09 18:13:16,593 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/infinispan/infinispan-bom/15.0.4.Final/infinispan-bom-15.0.4.Final.pom
+2024-08-09 18:13:16,645 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/infinispan/infinispan-build-configuration-parent/15.0.4.Final/infinispan-build-configuration-parent-15.0.4.Final.pom
+2024-08-09 18:13:16,699 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/infinispan/infinispan-build-configuration-parent/15.0.4.Final/infinispan-build-configuration-parent-15.0.4.Final.pom
+2024-08-09 18:13:16,754 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.17.1/jackson-bom-2.17.1.pom
+2024-08-09 18:13:16,796 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.17.1/jackson-bom-2.17.1.pom
+2024-08-09 18:13:16,839 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.1.6/jersey-bom-3.1.6.pom
+2024-08-09 18:13:16,917 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.1.6/jersey-bom-3.1.6.pom
+2024-08-09 18:13:16,975 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.8/project-1.0.8.pom
+2024-08-09 18:13:17,024 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.8/project-1.0.8.pom
+2024-08-09 18:13:17,075 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.9/jetty-ee10-bom-12.0.9.pom
+2024-08-09 18:13:17,116 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.9/jetty-ee10-bom-12.0.9.pom
+2024-08-09 18:13:17,173 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.9/jetty-bom-12.0.9.pom
+2024-08-09 18:13:17,209 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.9/jetty-bom-12.0.9.pom
+2024-08-09 18:13:17,287 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.0/micrometer-bom-1.13.0.pom
+2024-08-09 18:13:17,322 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.0/micrometer-bom-1.13.0.pom
+2024-08-09 18:13:17,366 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.3.0/micrometer-tracing-bom-1.3.0.pom
+2024-08-09 18:13:17,391 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.3.0/micrometer-tracing-bom-1.3.0.pom
+2024-08-09 18:13:17,452 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.110.Final/netty-bom-4.1.110.Final.pom
+2024-08-09 18:13:17,493 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.110.Final/netty-bom-4.1.110.Final.pom
+2024-08-09 18:13:17,591 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.6/reactor-bom-2023.0.6.pom
+2024-08-09 18:13:17,639 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.6/reactor-bom-2023.0.6.pom
+2024-08-09 18:13:17,694 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.5/spring-amqp-bom-3.1.5.pom
+2024-08-09 18:13:17,737 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.5/spring-amqp-bom-3.1.5.pom
+2024-08-09 18:13:17,781 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.0.0/spring-data-bom-2024.0.0.pom
+2024-08-09 18:13:17,847 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.0.0/spring-data-bom-2024.0.0.pom
+2024-08-09 18:13:17,884 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.8/spring-framework-bom-6.1.8.pom
+2024-08-09 18:13:17,909 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.8/spring-framework-bom-6.1.8.pom
+2024-08-09 18:13:17,942 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.3.0/spring-integration-bom-6.3.0.pom
+2024-08-09 18:13:17,980 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.3.0/spring-integration-bom-6.3.0.pom
+2024-08-09 18:13:18,024 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.1.0/spring-pulsar-bom-1.1.0.pom
+2024-08-09 18:13:18,054 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.1.0/spring-pulsar-bom-1.1.0.pom
+2024-08-09 18:13:18,092 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.3.0/spring-security-bom-6.3.0.pom
+2024-08-09 18:13:18,121 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.3.0/spring-security-bom-6.3.0.pom
+2024-08-09 18:13:18,151 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.3.0/spring-session-bom-3.3.0.pom
+2024-08-09 18:13:18,182 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.3.0/spring-session-bom-3.3.0.pom
+2024-08-09 18:13:18,226 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.pom
+2024-08-09 18:13:18,257 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.pom
+2024-08-09 18:13:18,295 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.pom
+2024-08-09 18:13:18,330 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.pom
+2024-08-09 18:13:18,372 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.pom
+2024-08-09 18:13:18,415 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.pom
+2024-08-09 18:13:18,456 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-project-jakarta/2.2.22/swagger-project-jakarta-2.2.22.pom
+2024-08-09 18:13:18,521 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-project-jakarta/2.2.22/swagger-project-jakarta-2.2.22.pom
+2024-08-09 18:13:18,602 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.pom
+2024-08-09 18:13:18,645 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.pom
+2024-08-09 18:13:18,683 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.pom
+2024-08-09 18:13:18,717 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.pom
+2024-08-09 18:13:18,795 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2.pom
+2024-08-09 18:13:18,825 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2.pom
+2024-08-09 18:13:18,861 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.17.2/jackson-dataformats-text-2.17.2.pom
+2024-08-09 18:13:18,897 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.17.2/jackson-dataformats-text-2.17.2.pom
+2024-08-09 18:13:18,949 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.pom
+2024-08-09 18:13:18,999 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.pom
+2024-08-09 18:13:19,839 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.jar
+2024-08-09 18:13:20,371 [Worker-50: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.jar
+2024-08-09 18:13:20,405 [BasicRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.jar
+2024-08-09 18:13:20,450 [BasicRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.jar
+2024-08-09 18:13:20,475 [BasicRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.jar
+2024-08-09 18:13:20,494 [BasicRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.jar
+2024-08-09 18:13:20,518 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.jar
+2024-08-09 18:13:20,626 [BasicRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.jar
+2024-08-09 18:13:20,642 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.jar
+2024-08-09 18:13:20,657 [BasicRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2.jar
+2024-08-09 18:13:20,657 [BasicRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.jar
+2024-08-09 18:13:20,677 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.jar
+2024-08-09 18:13:20,707 [BasicRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2.jar
+2024-08-09 18:13:21,086 [BasicRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.jar
+2024-08-09 18:13:21,975 [BasicRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.jar
+2024-08-09 18:13:22,458 [BasicRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.jar
+2024-08-09 18:13:25,295 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:01-spring-dependency-inversion:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\01-spring-dependency-inversion\pom.xml.
+2024-08-09 18:13:27,114 [Worker-50: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/01-spring-dependency-inversion: com.monocept:01-spring-dependency-inversion:0.0.1-SNAPSHOT with classifier  to /01-spring-dependency-inversion/target/classes
+2024-08-09 18:13:27,342 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:01-spring-hibernate-2:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\02-spring-hibernate-2\pom.xml.
+2024-08-09 18:13:27,507 [Worker-50: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/01-spring-dependency-inversion: com.monocept:01-spring-dependency-inversion:0.0.1-SNAPSHOT with classifier  to /01-spring-dependency-inversion/target/classes
+2024-08-09 18:13:32,417 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:03-spring-hibernate-3:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\03-spring-hibernate-3\pom.xml.
+2024-08-09 18:13:33,400 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:04-spring-rest-hibernate:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\04-spring-rest-hibernate\pom.xml.
+2024-08-09 18:13:34,531 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:04-spring-rest-jpa:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\05-spring-rest-jpa\pom.xml.
+2024-08-09 18:13:36,007 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:05-spring-rest-jpa-02:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\06-spring-rest-jpa-02\pom.xml.
+2024-08-09 18:13:37,339 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:07-spring-rest-email:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\07-spring-rest-email\pom.xml.
+2024-08-09 18:13:39,687 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:05-spring-rest-jpa-02:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\06-spring-rest-jpa-query-annotation\pom.xml.
+2024-08-09 18:13:41,844 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:05-spring-rest-jpa-02:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\06-spring-rest-jpa-nativequery-annotation\pom.xml.
+2024-08-09 18:13:43,006 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:08-spring-rest-jpa-one-to-one:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\08-spring-rest-jpa-one-to-one\pom.xml.
+2024-08-09 18:13:44,100 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:09-spring-rest-jpa-one-to-many-1:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\09-spring-rest-jpa-one-to-many-1\pom.xml.
+2024-08-09 18:13:45,080 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:10-spring-rest-assignment:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\10-spring-rest-assignment\pom.xml.
+2024-08-09 18:13:46,212 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-student-course:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\11-spring-rest-student-course\pom.xml.
+2024-08-09 18:13:47,995 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security\pom.xml.
+2024-08-09 18:13:49,003 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\12-spring-rest-security-logging-one-to-many\pom.xml.
+2024-08-09 18:13:50,282 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-project\pom.xml.
+2024-08-09 18:13:56,655 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0-sources.jar
+2024-08-09 18:13:56,955 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0-sources.jar
+2024-08-09 18:13:56,962 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0
+2024-08-09 18:13:57,040 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0-sources.jar
+2024-08-09 18:13:57,631 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0-sources.jar
+2024-08-09 18:13:57,639 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0
+2024-08-09 18:13:57,738 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0-sources.jar
+2024-08-09 18:13:57,851 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0-sources.jar
+2024-08-09 18:13:57,857 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springdoc:springdoc-openapi-starter-common:2.6.0
+2024-08-09 18:13:57,950 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,023 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,031 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for io.swagger.core.v3:swagger-core-jakarta:2.2.22
+2024-08-09 18:13:58,119 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0-sources.jar
+2024-08-09 18:13:58,363 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0-sources.jar
+2024-08-09 18:13:58,370 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.commons:commons-lang3:3.14.0
+2024-08-09 18:13:58,393 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 18:13:58,395 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 18:13:58,405 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 18:13:58,455 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,534 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,541 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for io.swagger.core.v3:swagger-annotations-jakarta:2.2.22
+2024-08-09 18:13:58,627 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,703 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22-sources.jar
+2024-08-09 18:13:58,712 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for io.swagger.core.v3:swagger-models-jakarta:2.2.22
+2024-08-09 18:13:58,810 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2-sources.jar
+2024-08-09 18:13:59,530 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.2/jackson-dataformat-yaml-2.17.2-sources.jar
+2024-08-09 18:13:59,845 [Worker-80: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.2
+2024-08-09 18:14:00,156 [Worker-80: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14-sources.jar
+2024-08-09 18:14:00,181 [Worker-80: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for org.webjars:swagger-ui:5.17.14
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:swagger-ui:jar:sources:5.17.14
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$7(MavenImpl.java:540)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:509)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:494)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:300)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2024-08-09 18:14:05,005 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 18:14:05,098 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 18:14:05,285 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 18:14:07,810 [Worker-93: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14-javadoc.jar
+2024-08-09 18:14:07,815 [Worker-93: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for org.webjars:swagger-ui:5.17.14
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:swagger-ui:jar:javadoc:5.17.14
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$7(MavenImpl.java:540)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:509)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:494)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:300)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2024-08-09 19:46:52,994 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 19:46:53,019 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 19:46:53,027 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 19:46:54,197 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 19:46:54,199 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 19:46:54,205 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 19:58:10,695 [Worker-110: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\pom.xml.
+2024-08-09 19:58:17,765 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 19:58:17,767 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 19:58:17,800 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 19:58:21,999 [Worker-113: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 19:58:22,318 [Worker-113: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 19:58:22,350 [Worker-113: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 20:02:53,868 [Worker-117: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:02:53,967 [Worker-117: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:02:53,978 [Worker-117: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 20:04:35,290 [Worker-118: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:04:35,402 [Worker-118: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:04:35,410 [Worker-118: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 20:04:36,730 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 20:04:36,732 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-09 20:04:36,740 [Worker-116: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 20:06:32,101 [Worker-117: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:06:32,118 [Worker-117: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:06:32,125 [Worker-117: Launching Application (16)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\13-springBankApp-dummy\src\test\resources
+2024-08-09 20:23:42,900 [Worker-126: Updating Maven Dependencies] ERROR o.e.m.c.i.p.r.ProjectRegistryRefreshJob - Resource '/13-springBankApp-dummy/pom.xml' does not exist.
+org.eclipse.core.internal.resources.ResourceException: Resource '/13-springBankApp-dummy/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:364)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:238)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:842)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:248)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:242)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readMavenProjectFacades(ProjectRegistryManager.java:742)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:396)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$4(ProjectRegistryRefreshJob.java:154)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1053)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: Resource '/13-springBankApp-dummy/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	... 19 common frames omitted
+2024-08-09 20:24:01,917 [Worker-141: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.monocept:11-spring-rest-security:0.0.1-SNAPSHOT @ C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\pom.xml.
+2024-08-09 20:24:04,229 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:24:04,260 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:24:04,269 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\src\test\resources
+2024-08-09 20:24:06,096 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:24:06,100 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-09 20:24:06,111 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\src\test\resources
