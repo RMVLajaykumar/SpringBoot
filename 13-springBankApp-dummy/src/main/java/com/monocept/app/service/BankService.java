@@ -8,6 +8,7 @@ import com.monocept.app.dto.AccountRequestDto;
 import com.monocept.app.dto.AccountResponseDto;
 import com.monocept.app.dto.CustomerRequestDto;
 import com.monocept.app.dto.CustomerResponseDto;
+import com.monocept.app.dto.ProfileRequestDto;
 import com.monocept.app.dto.TransactionResponseDto;
 import com.monocept.app.dto.UserRequestDto;
 import com.monocept.app.dto.UserResponseDto;
@@ -27,14 +28,14 @@ public interface BankService {
 
 	TransactionResponseDto doTransaction(long senderAccountno, long receiverAccountno, double amount);
 
-	PagedResponse<TransactionResponseDto> viewAllTransaction(int page, int size, String sortBy, String direction);
+	PagedResponse<TransactionResponseDto> viewAllTransaction(LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String direction);
 
-	List<TransactionResponseDto> viewPassbook(long accountNo);
+	PagedResponse<TransactionResponseDto> viewPassbook(long accountNo, LocalDateTime fromDate, LocalDateTime toDate, int page, int size, String sortBy, String direction);
 
-	List<TransactionResponseDto> searchByDate(LocalDateTime fromDate, LocalDateTime toDate);
+	//List<TransactionResponseDto> searchByDate(LocalDateTime fromDate, LocalDateTime toDate);
 
 	UserResponseDto createCustomer(CustomerRequestDto customerRequestDto, long userID);
 
-	UserResponseDto updateCustomer(UserRequestDto userRequestDto, long id);
+	String updateProfile(ProfileRequestDto profileRequestDto);
 
 }

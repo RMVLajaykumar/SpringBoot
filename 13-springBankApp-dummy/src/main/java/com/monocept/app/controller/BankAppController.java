@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.monocept.app.dto.CustomerRequestDto;
 import com.monocept.app.dto.CustomerResponseDto;
+import com.monocept.app.dto.ProfileRequestDto;
 import com.monocept.app.dto.TransactionResponseDto;
 import com.monocept.app.dto.UserRequestDto;
 import com.monocept.app.dto.UserResponseDto;
@@ -81,44 +82,80 @@ public class BankAppController {
 	}
 	
 	
-	@PostMapping("{senderAccountno}/transaction/{receiverAccountno}/{amount}")
-	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<TransactionResponseDto> doTransaction(@PathVariable(name="senderAccountno") long senderAccountno,@PathVariable(name="receiverAccountno") long receiverAccountno,@PathVariable(name="amount") double amount){
-		return new ResponseEntity<TransactionResponseDto>(bankService.doTransaction(senderAccountno,receiverAccountno,amount),HttpStatus.OK);
-	}
-	
-	
-	@GetMapping("/transaction")
-	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<PagedResponse<TransactionResponseDto>> viewTransaction(@RequestParam(name="page",defaultValue = "0") int page,
-			@RequestParam(name="size",defaultValue = "5")int size,
-			@RequestParam(name="sortBy",defaultValue = "id")String sortBy,
-			@RequestParam(name="direction",defaultValue="asc")String direction){
-		return new  ResponseEntity<PagedResponse<TransactionResponseDto>>(bankService.viewAllTransaction(page,size,sortBy,direction),HttpStatus.OK);
-	}
-	
-	@GetMapping("/passbook/{Accountno}")
-	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<List<TransactionResponseDto>> viewPassbook(@PathVariable(name="Accountno")long accountNo){
-		return new ResponseEntity<List<TransactionResponseDto>>(bankService.viewPassbook(accountNo),HttpStatus.OK);
-	} 
-	
-//	@GetMapping("/searchByDate")
-//	@PreAuthorize("hasRole('ADMIN')")
-//	public ResponseEntity<List<TransactionResponseDto>> searchByDate(@RequestParam(name="fromDate") LocalDateTime fromDate, @RequestParam(name="toDate") LocalDateTime toDate){
-//		return new ResponseEntity<List<TransactionResponseDto>>(bankService.searchByDate(fromDate,toDate),HttpStatus.OK);
+//	@PostMapping("{senderAccountno}/transaction/{receiverAccountno}/{amount}")
+//	@PreAuthorize("hasRole('USER')")
+//	public ResponseEntity<TransactionResponseDto> doTransaction(@PathVariable(name="senderAccountno") long senderAccountno,@PathVariable(name="receiverAccountno") long receiverAccountno,@PathVariable(name="amount") double amount){
+//		return new ResponseEntity<TransactionResponseDto>(bankService.doTransaction(senderAccountno,receiverAccountno,amount),HttpStatus.OK);
 //	}
 	
-	
-	@PutMapping("/update/{id}")
+	@PostMapping("/transactions")
 	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<UserResponseDto> updateCustomer(@RequestBody UserRequestDto userRequestDto ,@PathVariable(name="id") long id){
-		
-		
-		return new ResponseEntity<UserResponseDto>(bankService.updateCustomer(userRequestDto,id),HttpStatus.OK);
-		
+	public ResponseEntity<TransactionResponseDto> doTransaction(
+			@RequestParam(name = "senderAccountNumber") long senderAccountNumber,
+			@RequestParam(name = "receiverAccountNumber") long receiverAccountNumber,
+			@RequestParam(name = "amount") double amount) {
+		return new ResponseEntity<TransactionResponseDto>(bankService.doTransaction(senderAccountNumber, receiverAccountNumber, amount),HttpStatus.OK);
 	}
 	
+	
+	@GetMapping("/customers/passbook/{accountNumber}")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<PagedResponse<TransactionResponseDto>> getPassbook(@PathVariable(name = "accountNumber") long accountNumber,
+			@RequestParam(name = "from", defaultValue = "#{T(java.time.LocalDateTime).now().minusDays(30).toString()}") String from,
+			@RequestParam(name = "to", defaultValue = "#{T(java.time.LocalDateTime).now().toString()}") String to,
+			@RequestParam(name = "page", defaultValue = "0") int page,
+			@RequestParam(name = "size", defaultValue = "5") int size,
+			@RequestParam(name = "sortBy", defaultValue = "id") String sortBy,
+			@RequestParam(name = "direction", defaultValue = "asc") String direction) {
+		LocalDateTime fromDate = LocalDateTime.parse(from);
+		LocalDateTime toDate = LocalDateTime.parse(to);
+		PagedResponse<TransactionResponseDto> passbook=bankService.viewPassbook(accountNumber,fromDate,toDate,page,size,sortBy,direction);
+		
+		return new  ResponseEntity<PagedResponse<TransactionResponseDto>>(passbook,HttpStatus.OK);
+	}
+	
+//	@GetMapping("/passbook/{Accountno}")
+//	@PreAuthorize("hasRole('USER')")
+//	
+//	public ResponseEntity<List<TransactionResponseDto>> viewPassbook(@PathVariable(name="Accountno")long accountNo){
+//		return new ResponseEntity<List<TransactionResponseDto>>(bankService.viewPassbook(accountNo),HttpStatus.OK);
+//	} 
+	
+	
+
+	
+	
+	@PutMapping("/profile")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<String> updateProfile(@RequestBody ProfileRequestDto profileRequestDto) {
+		String message=bankService.updateProfile(profileRequestDto);
+		return new  ResponseEntity<String>(message,HttpStatus.OK);
+		
+
+	}
+	
+	
+	
+	
+	@GetMapping("/transactions")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<PagedResponse<TransactionResponseDto>> getAllTransactions(
+			@RequestParam(name = "page", defaultValue = "0") int page,
+			@RequestParam(name = "size", defaultValue = "5") int size,
+			@RequestParam(name = "sortBy", defaultValue = "id") String sortBy,
+			@RequestParam(name = "direction", defaultValue = "asc") String direction,
+			@RequestParam(name = "from", defaultValue = "#{T(java.time.LocalDateTime).now().minusDays(30).toString()}") String from,
+			@RequestParam(name = "to", defaultValue = "#{T(java.time.LocalDateTime).now().toString()}") String to) {
+
+		System.out.println(from);
+		System.out.println(to);
+		
+		LocalDateTime fromDate = LocalDateTime.parse(from);
+		LocalDateTime toDate = LocalDateTime.parse(to);
+
+		PagedResponse<TransactionResponseDto> transactions=	bankService.viewAllTransaction(fromDate, toDate, page, size, sortBy, direction);
+		return new ResponseEntity<PagedResponse<TransactionResponseDto>>(transactions,HttpStatus.OK);
+	}
 	
 	
 	

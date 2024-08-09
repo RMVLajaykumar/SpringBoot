@@ -3,11 +3,16 @@ package com.monocept.app.service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.monocept.app.dto.AccountRequestDto;
@@ -15,6 +20,7 @@ import com.monocept.app.dto.AccountResponseDto;
 import com.monocept.app.dto.BankRequestDto;
 import com.monocept.app.dto.CustomerRequestDto;
 import com.monocept.app.dto.CustomerResponseDto;
+import com.monocept.app.dto.ProfileRequestDto;
 import com.monocept.app.dto.TransactionResponseDto;
 import com.monocept.app.dto.UserRequestDto;
 import com.monocept.app.dto.UserResponseDto;
@@ -41,20 +47,26 @@ public class BankServiceImpl implements BankService{
 	BankRepository bankRepository;
 	TransactionRepository transactionRepository;
 	UserRepository userRepository;
+	 PasswordEncoder passwordEncoder;
 
 	
 
 
 	
+
+	
+
 
 	public BankServiceImpl(CustomerRepository customerRepository, AccountRepository accountRepository,
-			BankRepository bankRepository, TransactionRepository transactionRepository, UserRepository userRepository) {
+			BankRepository bankRepository, TransactionRepository transactionRepository, UserRepository userRepository,
+			PasswordEncoder passwordEncoder) {
 		super();
 		this.customerRepository = customerRepository;
 		this.accountRepository = accountRepository;
 		this.bankRepository = bankRepository;
 		this.transactionRepository = transactionRepository;
 		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 
@@ -243,57 +255,98 @@ public class BankServiceImpl implements BankService{
 	}
 
 
+//	@Override
+//	public TransactionResponseDto doTransaction(long senderAccountno, long receiverAccountno, double amount) {
+//		
+//		
+//		Account senderAccount=accountRepository.findById(senderAccountno).orElse(null);
+//		Account receiverAccount=accountRepository.findById(receiverAccountno).orElse(null);
+//		
+//		if(senderAccount==null){
+//			throw new NoRecordFoundException("sender account number no found");
+//		}
+//		if(receiverAccount==null) {
+//			throw new NoRecordFoundException("recevier account number no found");
+//		}
+//		if(senderAccount==receiverAccount) {
+//			throw new NoRecordFoundException("both Account numbers are same");
+//		}
+//		if(senderAccount.getBalance()<amount) {
+//			throw new NoRecordFoundException("Insufficient Balance");
+//		}
+//		
+//	
+//			senderAccount.setBalance(senderAccount.getBalance()-amount);
+//			receiverAccount.setBalance(receiverAccount.getBalance()+amount);
+//			Customer customer = new Customer();
+//
+//			Customer sender=senderAccount.getCustomer();
+//			sender.setTotalBalance(sender.getTotalBalance()-amount);
+//			
+//			Customer receiver=receiverAccount.getCustomer();
+//			receiver.setTotalBalance(receiver.getTotalBalance()+amount);
+//			
+//			customerRepository.save(sender);
+//			customerRepository.save(receiver);
+//			
+//			
+			
+//			accountRepository.save(senderAccount);
+//			accountRepository.save(receiverAccount);
+//			
+//		Transaction transaction=new Transaction();
+//		transaction.setAmount(amount);
+//		transaction.setSenderAccount(senderAccount);
+//		transaction.setReceiverAccount(receiverAccount);
+//		transaction.setTransactionType(TransactionType.Transfer);
+//	
+//	    Transaction save = transactionRepository.save(transaction);
+//	 
+//	    
+//		return  convertTransactiontoTransactionDto(save);
+//			
+//		
+//	}
 	@Override
-	public TransactionResponseDto doTransaction(long senderAccountno, long receiverAccountno, double amount) {
-		
-		
-		Account senderAccount=accountRepository.findById(senderAccountno).orElse(null);
-		Account receiverAccount=accountRepository.findById(receiverAccountno).orElse(null);
-		
-		if(senderAccount==null){
-			throw new NoRecordFoundException("sender account number no found");
-		}
-		if(receiverAccount==null) {
-			throw new NoRecordFoundException("recevier account number no found");
-		}
-		if(senderAccount==receiverAccount) {
-			throw new NoRecordFoundException("both Account numbers are same");
-		}
-		if(senderAccount.getBalance()<amount) {
-			throw new NoRecordFoundException("Insufficient Balance");
-		}
-		
-	
-			senderAccount.setBalance(senderAccount.getBalance()-amount);
-			receiverAccount.setBalance(receiverAccount.getBalance()+amount);
-			Customer customer = new Customer();
+	public TransactionResponseDto doTransaction(long senderAccountNumber, long receiverAccountNumber,
+			double amount) {
+		Optional<User> user = userRepository.findByEmail(getEmailFromSecurityContext());
+		List<Account> accounts = user.get().getCustomer().getAccounts();
+		for (Account account : accounts) {
+			if (account.getAccountNumber() == senderAccountNumber) {
+				Account senderAccount = accountRepository.findById(senderAccountNumber).orElse(null);
+				Account receiverAccount = accountRepository.findById(receiverAccountNumber).orElse(null);
+				if (senderAccount == null || receiverAccount == null) {
+					throw new NoRecordFoundException("Please check the sender account number " + senderAccountNumber
+							+ " and receiver account number " + receiverAccountNumber);
+				}
+				if (senderAccount.equals(receiverAccount)) {
+					throw new NoRecordFoundException("self transfer to the same account number not possible");
+				}
+				if (senderAccount.getBalance() < amount) {
+					throw new NoRecordFoundException("Insufficient Funds please check the balance again");
+				}
+				senderAccount.setBalance(senderAccount.getBalance() - amount);
+				receiverAccount.setBalance(receiverAccount.getBalance() + amount);
+				accountRepository.save(senderAccount);
+				accountRepository.save(receiverAccount);
+				Customer senderCustomer = senderAccount.getCustomer();
+				Customer receiverCustomer = receiverAccount.getCustomer();
+				senderCustomer.setTotalBalance(senderCustomer.getTotalBalance() - amount);
+				receiverCustomer.setTotalBalance(receiverCustomer.getTotalBalance() + amount);
 
-			Customer sender=senderAccount.getCustomer();
-			sender.setTotalBalance(sender.getTotalBalance()-amount);
-			
-			Customer receiver=receiverAccount.getCustomer();
-			receiver.setTotalBalance(receiver.getTotalBalance()+amount);
-			
-			customerRepository.save(sender);
-			customerRepository.save(receiver);
-			
-			
-			
-			accountRepository.save(senderAccount);
-			accountRepository.save(receiverAccount);
-			
-		Transaction transaction=new Transaction();
-		transaction.setAmount(amount);
-		transaction.setSenderAccount(senderAccount);
-		transaction.setReceiverAccount(receiverAccount);
-		transaction.setTransactionType(TransactionType.Transfer);
-	
-	    Transaction save = transactionRepository.save(transaction);
-	 
-	    
-		return  convertTransactiontoTransactionDto(save);
-			
-		
+				customerRepository.save(senderCustomer);
+				customerRepository.save(receiverCustomer);
+				Transaction transaction = new Transaction();
+				transaction.setAmount(amount);
+				transaction.setSenderAccount(senderAccount);
+				transaction.setReceiverAccount(receiverAccount);
+				transaction.setTransactionType(TransactionType.Transfer);
+				return  convertTransactiontoTransactionDto(transactionRepository.save(transaction));
+			}
+		}
+		throw new NoRecordFoundException("Your account number is wrong");
+
 	}
 
 
@@ -327,44 +380,31 @@ public class BankServiceImpl implements BankService{
 
 
 	@Override
-	public PagedResponse<TransactionResponseDto> viewAllTransaction(int page, int size, String sortBy, String direction) {
+	public PagedResponse<TransactionResponseDto> viewAllTransaction(LocalDateTime fromDate, LocalDateTime toDate,
+			int page, int size, String sortBy, String direction) {
 		Sort sort = Sort.by(sortBy);
-        if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
-            sort = sort.descending();
-        } else {
-            sort = sort.ascending();
-        }
-        Pageable pageable = PageRequest.of(page, size, sort);
-        Page<Transaction> transactions = transactionRepository.findAll(pageable);
-        
-        
-        List<TransactionResponseDto> findAll =  convertTransactiontoTransactionDto(transactions.getContent());
-		  return new PagedResponse<>(findAll, transactions.getNumber(), transactions.getSize(),
-				  transactions.getTotalElements(), transactions.getTotalPages(), transactions.isLast());
-		
-		
-		
-
-	}
-
-
-	@Override
-	public List<TransactionResponseDto> viewPassbook(long accountNo) {
-		
-		Account account= accountRepository.findById(accountNo).orElse(null);
-		if(account==null) {
-			throw new NoRecordFoundException("account with accountnumber: "+accountNo+" not Found");
+		if (direction.equalsIgnoreCase("desc")) {
+			sort = sort.descending();
+		} else {
+			sort = sort.ascending();
 		}
-		
-		
-		List<TransactionResponseDto> transactionResponseDto= covertPassbooktopassbookDto(transactionRepository.viewPassbook(account),accountNo);
-		return transactionResponseDto;
-		
-		
-		
-		
-		
+//		fromDate = fromDate.truncatedTo(ChronoUnit.SECONDS);
+//		toDate = toDate.truncatedTo(ChronoUnit.SECONDS);
+		PageRequest pageRequest = PageRequest.of(page, size, sort);
+		System.out.println("Page request: " + pageRequest);
+		Page<Transaction> pagedResponse = transactionRepository.findAllByTransactionDateBetween(fromDate, toDate,
+				pageRequest);
+		System.out.println(
+				"Fetched transactions: " + convertTransactiontoTransactionDto(pagedResponse.getContent()));
+		PagedResponse<TransactionResponseDto> response = new PagedResponse<>(
+				convertTransactiontoTransactionDto(pagedResponse.getContent()), pagedResponse.getNumber(),
+				pagedResponse.getSize(), pagedResponse.getTotalElements(), pagedResponse.getTotalPages(),
+				pagedResponse.isLast());
+		return response;
 	}
+
+
+	
 
 
 	private List<TransactionResponseDto> covertPassbooktopassbookDto(List<Transaction> viewPassbook,long accountNo) {
@@ -396,12 +436,7 @@ public class BankServiceImpl implements BankService{
 	}
 
 
-	@Override
-	public List<TransactionResponseDto> searchByDate(LocalDateTime fromDate, LocalDateTime toDate) {
-		
-		return convertTransactiontoTransactionDto(transactionRepository.findByTransactionDateBetween(fromDate,toDate));
-	}
-
+	
 
 	@Override
 	public UserResponseDto createCustomer(CustomerRequestDto customerRequestDto,long userID) {
@@ -410,7 +445,7 @@ public class BankServiceImpl implements BankService{
 			throw new NoRecordFoundException("User not found with the following id "+userID);
 		}
 		if(user.getCustomer()!=null) {
-			throw new NoRecordFoundException("Customer already assigned cannot create another customer to the user");
+			throw new NoRecordFoundException("Customer already exists");
 		}
 		Customer customer = convertCustomerRequestToCustomer(customerRequestDto);
 		user.setCustomer(customer);
@@ -446,30 +481,96 @@ public class BankServiceImpl implements BankService{
 
 
 	@Override
-	public UserResponseDto updateCustomer(UserRequestDto userRequestDto, long id) {
-		User user = userRepository.findById(id).orElse(null);
-		if(user==null) {
-			throw new NoRecordFoundException("User not found with the following id "+id);
+	public String updateProfile(ProfileRequestDto profileRequestDto) {
+		User user = userRepository.findByEmail(getEmailFromSecurityContext()).orElse(null);
+		if(user.getCustomer()==null) {
+			throw new NoRecordFoundException("Cannot update the customer details still you havn't have customer id");
 		}
-		else {
-			User convertUserRequestDtotoUser = convertUserRequestDtotoUser(userRequestDto);
-			return convertUserToUserDto(convertUserRequestDtotoUser);
+		Customer customer = user.getCustomer();
+		if(profileRequestDto.getEmail()!=null && !profileRequestDto.getEmail().isEmpty() && profileRequestDto.getEmail().length()!=0) {
+			user.setEmail(profileRequestDto.getEmail());  
 		}
+		if(profileRequestDto.getFirstName()!=null && !profileRequestDto.getFirstName().isEmpty() && profileRequestDto.getFirstName().length()!=0) {
+			customer.setFirstName(profileRequestDto.getFirstName());
+		}
+		if(profileRequestDto.getLastName()!=null && !profileRequestDto.getLastName().isEmpty() && profileRequestDto.getLastName().length()!=0) {
+			customer.setLastName(profileRequestDto.getLastName());
+		}
+		if(profileRequestDto.getPassword()!=null && !profileRequestDto.getPassword().isEmpty() && profileRequestDto.getPassword().length()!=0) {
+			user.setPassword(passwordEncoder.encode(profileRequestDto.getPassword()));
+		}
+
+		userRepository.save(user);
 		
+		return "user succesfully updated";
+	}
+
+	private String getEmailFromSecurityContext() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
+			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+			return userDetails.getUsername();
+		}
+		return null;
 	}
 
 
-	private User convertUserRequestDtotoUser(UserRequestDto userRequestDto) {
-	User user=new User();
-	user.setEmail(userRequestDto.getEmail());
-	user.setPassword(userRequestDto.getPassword());
+	@Override
+	public PagedResponse<TransactionResponseDto> viewPassbook(long accountNumber, LocalDateTime from, LocalDateTime to, int page,
+			int size, String sortBy, String direction) {
+		Sort sort = Sort.by(sortBy);
+		if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
+			sort.descending();
+		} else {
+			sort.ascending();
+		}
+
+		String email = getEmailFromSecurityContext();
+		Optional<User> user = userRepository.findByEmail(email);
+		if(user.get().getCustomer()==null) {
+			throw new NoRecordFoundException("still you havn't have customer id");
+		}
+		List<Account> accounts = user.get().getCustomer().getAccounts();
+		for (Account acc : accounts) {
+			if (acc.getAccountNumber() == accountNumber) {
+				Account account = accountRepository.findById(accountNumber).orElse(null);
+		PageRequest pageRequest = PageRequest.of(page, size, sort);
+				Page<Transaction> pagedResponse = transactionRepository.viewPassbook(account,from,to,pageRequest);
+
+				return new PagedResponse<TransactionResponseDto>(
+						convertTransactiontoTransactionDto(pagedResponse.getContent(), accountNumber),
+						pagedResponse.getNumber(), pagedResponse.getSize(), pagedResponse.getTotalElements(),
+						pagedResponse.getTotalPages(), pagedResponse.isLast());
+			}
+		}
+		throw new NoRecordFoundException("Please give valid account number");
+		
+
+	}
+
+
+	private List<TransactionResponseDto> convertTransactiontoTransactionDto(List<Transaction> passbook,
+			long accountNumber) {
+		List<TransactionResponseDto> list = new ArrayList<>();
+		for (Transaction transaction : passbook) {
+			TransactionResponseDto responseDto = new TransactionResponseDto();
+			responseDto.setAmount(transaction.getAmount());
+			responseDto.setSenderAccount(convertAccounttoAccountResponseDto(transaction.getSenderAccount()));
+			responseDto.setReceiverAccount(convertAccounttoAccountResponseDto(transaction.getReceiverAccount()));
+			responseDto.setId(transaction.getId());
+			responseDto.setTransactionDate(transaction.getTransactionDate());
+			if (transaction.getSenderAccount().getAccountNumber() == accountNumber) {
+				responseDto.setTransactionType(TransactionType.Debit);
+			} else {
+				responseDto.setTransactionType(TransactionType.Credit);
+			}
+			list.add(responseDto);
+		}
+		return list;
+	}
+
+
 	
-
-	user.setCustomer(userRequestDto.getCustomer());
-	User save = userRepository.save(user);
-	return save;
-	}
-
 
 	
 
