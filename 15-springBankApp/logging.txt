@@ -3154,3 +3154,3399 @@ io.jsonwebtoken.security.SignatureException: JWT signature does not match locall
 2024-08-10T01:42:07.241+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [boddupalli]
 2024-08-10T01:42:07.241+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [4.99981E8]
 2024-08-10T01:42:07.241+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [6]
+2024-08-10T01:52:48.610+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T01:52:48.625+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [20eg106231@anurag.edu.in]
+2024-08-10T01:52:48.638+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T01:52:48.639+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2024-08-10T01:52:48.652+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T01:52:48.652+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [20eg106231@anurag.edu.in]
+2024-08-10T01:52:48.774+05:30  WARN 15512 --- [13-springBankApp-project] [http-nio-8082-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
+2024-08-10T01:53:29.342+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T01:53:29.345+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T01:53:29.347+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T01:53:29.347+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T01:53:29.351+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T01:53:29.351+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T01:53:29.358+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T01:53:29.359+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T01:53:29.360+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T01:53:29.361+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T01:53:29.370+05:30 DEBUG 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T01:53:29.370+05:30 TRACE 15512 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T12:18:26.553+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T12:18:26.554+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T12:18:26.555+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T12:18:26.607+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-10T12:18:26.607+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-10T12:18:28.125+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T12:18:28.285+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 7 JPA repository interfaces.
+2024-08-10T12:18:29.590+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T12:18:29.608+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T12:18:29.609+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T12:18:29.691+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T12:18:29.691+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3083 ms
+2024-08-10T12:18:29.917+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T12:18:30.020+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-10T12:18:30.084+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T12:18:30.656+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T12:18:30.695+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-10T12:18:31.321+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f1527df
+2024-08-10T12:18:31.333+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-10T12:18:33.094+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T12:18:33.324+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T12:18:33.885+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T12:18:33.950+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T12:18:34.035+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-10T12:18:35.086+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T12:18:35.893+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T12:18:35.947+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T12:18:35.958+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 10.164 seconds (process running for 11.512)
+2024-08-10T12:18:42.922+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-10T12:18:42.922+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-10T12:18:42.924+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-10T12:18:43.149+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] c.m.app.controller.AuthController        : in register method using trace 
+2024-08-10T12:18:43.150+05:30 ERROR 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] c.m.app.controller.AuthController        : In Register method false
+2024-08-10T12:18:43.338+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    limit
+        ?
+2024-08-10T12:18:43.344+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:18:43.344+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2024-08-10T12:18:43.580+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2024-08-10T12:18:43.581+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ROLE_USER]
+2024-08-10T12:18:43.713+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (customer_id, email, password) 
+    values
+        (?, ?, ?)
+2024-08-10T12:18:43.719+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [null]
+2024-08-10T12:18:43.720+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:18:43.720+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$4mxm3nkPldgX/zLGvIFSL.Nc5EhnuY4py1871zwqmLSls1SHulCbe]
+2024-08-10T12:18:43.803+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2024-08-10T12:18:43.804+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [12]
+2024-08-10T12:18:43.804+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2024-08-10T12:19:05.781+05:30 ERROR 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] c.m.app.controller.AuthController        : In Login method
+2024-08-10T12:19:06.071+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:19:06.074+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:19:06.081+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:19:06.083+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:20:00.260+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:20:00.263+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:20:00.269+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:20:00.271+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:20:00.432+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2024-08-10T12:20:00.433+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [12]
+2024-08-10T12:20:04.726+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        customer
+        (active, first_name, last_name, total_balance) 
+    values
+        (?, ?, ?, ?)
+2024-08-10T12:20:04.728+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:20:04.728+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [sai]
+2024-08-10T12:20:04.729+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [kiran]
+2024-08-10T12:20:04.729+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [0.0]
+2024-08-10T12:20:04.763+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    update
+        users 
+    set
+        customer_id=?,
+        email=?,
+        password=? 
+    where
+        id=?
+2024-08-10T12:20:04.764+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:20:04.764+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:20:04.765+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$4mxm3nkPldgX/zLGvIFSL.Nc5EhnuY4py1871zwqmLSls1SHulCbe]
+2024-08-10T12:20:04.766+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [12]
+2024-08-10T12:20:28.379+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:20:28.381+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:20:28.388+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:20:28.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:20:28.403+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.id=?
+2024-08-10T12:20:28.405+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [12]
+2024-08-10T12:20:28.439+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.monocept.app.exception.NoRecordFoundException: Customer already assigned cannot create another customer to the user]
+2024-08-10T12:21:17.574+05:30 ERROR 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] c.m.app.controller.AuthController        : In Login method
+2024-08-10T12:21:17.580+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:21:17.581+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:21:17.587+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:21:17.588+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:21:17.599+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:21:17.600+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:21:42.327+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:21:42.329+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:21:42.332+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:21:42.334+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:21:42.341+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:21:42.343+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:21:42.365+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
+2024-08-10T12:22:56.844+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:22:56.848+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:22:56.855+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:22:56.856+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:22:56.868+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        b1_0.bank_id,
+        b1_0.abbreviation,
+        b1_0.full_name 
+    from
+        bank b1_0 
+    where
+        b1_0.bank_id=?
+2024-08-10T12:22:56.869+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:INTEGER) <- [1]
+2024-08-10T12:22:56.881+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:22:56.881+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:22:56.940+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        coalesce(sum(a1_0.balance), 0) 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:22:56.941+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:22:56.957+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        account
+        (active, balance, bank_id, customer_id) 
+    values
+        (?, ?, ?, ?)
+2024-08-10T12:22:56.958+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:22:56.958+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [1000.0]
+2024-08-10T12:22:56.958+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:22:56.959+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:22:56.975+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:22:56.976+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:22:56.977+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [sai]
+2024-08-10T12:22:56.977+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [kiran]
+2024-08-10T12:22:56.977+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [1000.0]
+2024-08-10T12:22:56.977+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:24:45.549+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:24:45.553+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:24:45.558+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:24:45.559+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:24:45.567+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:24:45.568+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:24:45.586+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:24:45.587+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:24:45.591+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:24:45.593+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:24:45.606+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:24:45.607+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:24:45.637+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:24:45.638+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-08-10T12:24:45.650+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:24:45.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:24:45.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [980.0]
+2024-08-10T12:24:45.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:24:45.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:24:45.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:24:45.656+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:24:45.657+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:24:45.657+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [527820.0]
+2024-08-10T12:24:45.657+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:24:45.657+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
+2024-08-10T12:24:45.658+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [1]
+2024-08-10T12:24:45.679+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:24:45.680+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-08-10T12:24:45.695+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:24:45.696+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:24:45.696+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [sai]
+2024-08-10T12:24:45.696+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [kiran]
+2024-08-10T12:24:45.697+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [980.0]
+2024-08-10T12:24:45.697+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:24:45.701+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:24:45.702+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:24:45.702+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [ajay]
+2024-08-10T12:24:45.703+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [kumar]
+2024-08-10T12:24:45.703+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [530820.0]
+2024-08-10T12:24:45.703+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [1]
+2024-08-10T12:24:52.504+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (amount, receiver_account, sender_account, transaction_date, transaction_type) 
+    values
+        (?, ?, ?, ?, ?)
+2024-08-10T12:24:52.506+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:DOUBLE) <- [20.0]
+2024-08-10T12:24:52.507+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2024-08-10T12:24:52.507+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:BIGINT) <- [8]
+2024-08-10T12:24:52.507+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2024-08-10T12:24:45.717705500]
+2024-08-10T12:24:52.509+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:ENUM) <- [Transfer]
+2024-08-10T12:29:43.137+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-10T12:29:43.177+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T12:29:43.188+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-10T12:29:43.203+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-10T12:29:43.426+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T12:29:43.427+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T12:29:43.428+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T12:29:44.619+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T12:29:44.663+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 7 JPA repository interfaces.
+2024-08-10T12:29:44.877+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T12:29:44.878+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T12:29:44.878+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T12:29:44.906+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T12:29:44.906+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1475 ms
+2024-08-10T12:29:44.965+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T12:29:44.968+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T12:29:44.986+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T12:29:44.987+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-10T12:29:45.018+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@554dd569
+2024-08-10T12:29:45.018+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-10T12:29:45.321+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T12:29:45.411+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T12:29:45.518+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T12:29:45.548+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T12:29:45.728+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T12:29:45.964+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T12:29:45.976+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T12:29:45.980+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 2.622 seconds (process running for 681.534)
+2024-08-10T12:29:45.982+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T12:29:59.740+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-10T12:29:59.741+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-10T12:29:59.746+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-08-10T12:29:59.913+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:29:59.918+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:29:59.929+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:29:59.934+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:29:59.959+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        b1_0.bank_id,
+        b1_0.abbreviation,
+        b1_0.full_name 
+    from
+        bank b1_0 
+    where
+        b1_0.bank_id=?
+2024-08-10T12:29:59.960+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:INTEGER) <- [1]
+2024-08-10T12:29:59.970+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:29:59.972+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [100]
+2024-08-10T12:29:59.989+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.monocept.app.exception.CustomerNotFoundException: customer  with id: 100 not found]
+2024-08-10T12:30:31.714+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:30:31.716+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:30:31.721+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:30:31.722+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:30:31.796+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.receiver_account,
+        t1_0.sender_account,
+        t1_0.transaction_date,
+        t1_0.transaction_type 
+    from
+        transaction t1_0 
+    where
+        t1_0.transaction_date between ? and ? 
+    order by
+        t1_0.id 
+    limit
+        ?
+2024-08-10T12:30:31.797+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2024-07-10T01:39:23.981402100]
+2024-08-10T12:30:31.797+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2024-08-10T01:39:23.992023900]
+2024-08-10T12:30:31.797+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [5]
+2024-08-10T12:30:31.820+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        transaction t1_0 
+    where
+        t1_0.transaction_date between ? and ?
+2024-08-10T12:30:31.821+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2024-07-10T01:39:23.981402100]
+2024-08-10T12:30:31.823+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2024-08-10T01:39:23.992023900]
+2024-08-10T12:32:40.195+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:32:40.197+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T12:32:40.200+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:32:40.201+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T12:32:40.210+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:32:40.211+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T12:32:40.241+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:32:40.242+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [godelevengaming@gmail.com]
+2024-08-10T12:32:40.245+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:32:40.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T12:32:40.251+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:32:40.251+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2024-08-10T12:32:40.258+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.monocept.app.exception.NoRecordFoundException: Please give valid account number]
+2024-08-10T12:33:11.831+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:33:11.832+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:33:11.836+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:33:11.837+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:33:11.844+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:33:11.844+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:33:11.851+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:33:11.851+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:33:11.854+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:33:11.855+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:33:11.857+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:33:11.858+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:33:11.919+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.receiver_account,
+        t1_0.sender_account,
+        t1_0.transaction_date,
+        t1_0.transaction_type 
+    from
+        transaction t1_0 
+    where
+        (
+            t1_0.sender_account=? 
+            or t1_0.receiver_account=?
+        ) 
+        and t1_0.transaction_date between ? and ? 
+    order by
+        t1_0.id 
+    limit
+        ?
+2024-08-10T12:33:11.919+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:33:11.920+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [8]
+2024-08-10T12:33:11.920+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:TIMESTAMP) <- [2024-07-11T12:33:11.848742300]
+2024-08-10T12:33:11.920+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2024-08-10T12:33:11.848742300]
+2024-08-10T12:33:11.920+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:INTEGER) <- [5]
+2024-08-10T12:34:27.992+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:34:27.994+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:34:27.999+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:34:28.001+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:34:28.007+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:34:28.008+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:34:28.027+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:34:28.028+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:34:28.031+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:34:28.032+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:34:28.043+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:34:28.044+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:34:28.044+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Rmvk]
+2024-08-10T12:34:28.045+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [ak]
+2024-08-10T12:34:28.045+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [980.0]
+2024-08-10T12:34:28.045+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:35:26.884+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:35:26.887+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:35:26.890+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:35:26.892+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:35:26.897+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:35:26.898+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:35:26.911+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:35:26.912+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:35:26.914+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:35:26.915+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:35:26.918+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:35:26.919+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:35:26.926+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:35:26.926+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:35:26.927+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:35:26.927+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:35:26.927+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:35:26.927+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:35:26.941+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        coalesce(sum(a1_0.balance), 0) 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:35:26.942+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:35:26.949+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:35:26.949+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:35:26.949+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Rmvk]
+2024-08-10T12:35:26.949+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [ak]
+2024-08-10T12:35:26.949+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [500980.0]
+2024-08-10T12:35:26.950+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:35:26.963+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (amount, receiver_account, sender_account, transaction_date, transaction_type) 
+    values
+        (?, ?, ?, ?, ?)
+2024-08-10T12:35:26.964+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:DOUBLE) <- [500000.0]
+2024-08-10T12:35:26.965+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [8]
+2024-08-10T12:35:26.965+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:BIGINT) <- [null]
+2024-08-10T12:35:26.965+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2024-08-10T12:35:26.962360800]
+2024-08-10T12:35:26.965+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:ENUM) <- [Transfer]
+2024-08-10T12:35:42.274+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:35:42.277+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [vari@gmail.com]
+2024-08-10T12:35:42.285+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:35:42.286+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [vari@gmail.com]
+2024-08-10T12:35:42.290+05:30 ERROR 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.core.userdetails.UsernameNotFoundException: User not found with username or email: vari@gmail.com
+	at com.monocept.app.service.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:35)
+	at com.monocept.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-08-10T12:36:21.509+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:36:21.511+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:21.514+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:36:21.514+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:36:21.519+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:36:21.520+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:21.528+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:36:21.529+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:21.539+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:36:21.540+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:36:21.545+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:36:21.546+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:36:39.634+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:36:39.635+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:39.637+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:36:39.638+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:36:39.642+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:36:39.642+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:39.649+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:36:39.649+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:36:39.651+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:36:39.651+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:36:39.654+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:36:39.654+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:37:58.678+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:37:58.680+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:37:58.684+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:37:58.685+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:37:58.695+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:37:58.696+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:37:58.704+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:37:58.705+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:37:58.712+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:37:58.713+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:37:58.713+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Rmvk]
+2024-08-10T12:37:58.713+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [ak]
+2024-08-10T12:37:58.713+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [500980.0]
+2024-08-10T12:37:58.713+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:37:58.719+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:37:58.719+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:37:58.719+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:37:58.719+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:37:58.720+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:37:58.720+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:38:25.102+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:38:25.103+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:38:25.110+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:38:25.111+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:38:25.119+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:38:25.120+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:38:25.131+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T12:38:25.132+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:38:25.132+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Rmvk]
+2024-08-10T12:38:25.132+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [ak]
+2024-08-10T12:38:25.132+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [500980.0]
+2024-08-10T12:38:25.132+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T12:38:47.957+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:38:47.959+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:38:47.964+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:38:47.965+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:38:47.972+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:38:47.972+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:38:47.981+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:38:47.982+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:38:47.982+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:38:47.982+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:38:47.982+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:38:47.982+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:39:15.620+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:39:15.623+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:15.628+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:39:15.629+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:15.637+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:39:15.638+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:39:15.645+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:39:15.646+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:39:15.646+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:39:15.646+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:39:15.646+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:39:15.646+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:39:21.363+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:39:21.365+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:21.370+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:39:21.371+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:21.379+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:39:21.380+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:39:21.389+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:39:21.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:39:21.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:39:21.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:39:21.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:39:21.390+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-1] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:39:29.230+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:39:29.231+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:29.238+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:39:29.239+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:29.246+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:39:29.247+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:39:29.253+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:39:29.254+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T12:39:29.254+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:39:29.254+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:39:29.254+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:39:29.256+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:39:51.308+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:39:51.309+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:51.312+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:39:51.312+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T12:39:51.318+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T12:39:51.318+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:39:51.322+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T12:39:51.322+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T12:39:51.322+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T12:39:51.322+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T12:39:51.322+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T12:39:51.322+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T12:40:01.248+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:40:01.249+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:40:01.251+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:40:01.252+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:40:01.257+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T12:40:01.258+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:40:01.266+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T12:40:01.266+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T12:40:01.268+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T12:40:01.268+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:40:01.271+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T12:40:01.271+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T12:40:01.283+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.receiver_account,
+        t1_0.sender_account,
+        t1_0.transaction_date,
+        t1_0.transaction_type 
+    from
+        transaction t1_0 
+    where
+        (
+            t1_0.sender_account=? 
+            or t1_0.receiver_account=?
+        ) 
+        and t1_0.transaction_date between ? and ? 
+    order by
+        t1_0.id 
+    limit
+        ?
+2024-08-10T12:40:01.283+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T12:40:01.283+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [8]
+2024-08-10T12:40:01.283+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (3:TIMESTAMP) <- [2024-07-11T12:40:01.262742900]
+2024-08-10T12:40:01.283+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2024-08-10T12:40:01.263742700]
+2024-08-10T12:40:01.284+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (5:INTEGER) <- [5]
+2024-08-10T12:57:18.846+05:30  WARN 29152 --- [13-springBankApp-project] [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=10m33s434ms922µs500ns).
+2024-08-10T13:02:04.690+05:30  WARN 29152 --- [13-springBankApp-project] [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2m15s802ms321µs100ns).
+2024-08-10T13:13:32.221+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-10T13:13:32.347+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:13:32.375+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-10T13:13:32.424+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-10T13:13:33.083+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T13:13:33.084+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T13:13:33.084+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:13:33.531+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T13:13:33.563+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 7 JPA repository interfaces.
+2024-08-10T13:13:33.778+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T13:13:33.781+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T13:13:33.782+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T13:13:33.813+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T13:13:33.813+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 724 ms
+2024-08-10T13:13:33.902+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T13:13:33.906+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T13:13:33.919+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T13:13:33.922+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-08-10T13:13:33.952+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1da65001
+2024-08-10T13:13:33.953+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-08-10T13:13:34.139+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T13:13:34.215+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:13:34.295+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T13:13:34.310+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T13:13:34.453+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T13:13:34.709+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T13:13:34.732+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T13:13:34.734+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 1.761 seconds (process running for 3310.288)
+2024-08-10T13:13:34.735+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T13:34:06.845+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-10T13:34:06.918+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:34:06.938+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-08-10T13:34:06.985+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-10T13:34:07.339+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T13:34:07.341+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T13:34:07.341+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:34:07.618+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T13:34:07.701+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 7 JPA repository interfaces.
+2024-08-10T13:34:07.854+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T13:34:07.855+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T13:34:07.855+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T13:34:07.875+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T13:34:07.875+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 530 ms
+2024-08-10T13:34:07.919+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T13:34:07.921+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T13:34:07.929+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T13:34:07.930+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-08-10T13:34:07.984+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a13931a
+2024-08-10T13:34:07.985+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-08-10T13:34:08.295+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T13:34:08.418+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:34:08.500+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T13:34:08.518+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T13:34:08.632+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T13:34:08.862+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T13:34:08.872+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T13:34:08.876+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 1.613 seconds (process running for 4544.43)
+2024-08-10T13:34:08.877+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T13:37:30.559+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-10T13:37:30.572+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:37:30.572+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-08-10T13:37:30.580+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-08-10T13:37:30.700+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T13:37:30.700+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T13:37:30.701+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:37:31.119+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T13:37:31.152+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 7 JPA repository interfaces.
+2024-08-10T13:37:31.304+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T13:37:31.305+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T13:37:31.305+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T13:37:31.319+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T13:37:31.319+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 617 ms
+2024-08-10T13:37:31.349+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T13:37:31.352+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T13:37:31.359+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T13:37:31.360+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-08-10T13:37:31.373+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7679aefe
+2024-08-10T13:37:31.373+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-08-10T13:37:31.487+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T13:37:31.565+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:37:31.617+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T13:37:31.630+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T13:37:31.722+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T13:37:31.846+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T13:37:31.853+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T13:37:31.857+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 1.193 seconds (process running for 4747.411)
+2024-08-10T13:37:31.858+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T13:40:31.929+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-10T13:40:31.945+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:40:31.946+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-08-10T13:40:31.951+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-08-10T13:40:32.066+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T13:40:32.067+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T13:40:32.067+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:40:32.248+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T13:40:32.266+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 7 JPA repository interfaces.
+2024-08-10T13:40:32.353+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T13:40:32.353+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T13:40:32.353+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T13:40:32.373+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T13:40:32.373+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 304 ms
+2024-08-10T13:40:32.404+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T13:40:32.405+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T13:40:32.412+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T13:40:32.413+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-08-10T13:40:32.431+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@348e3dcd
+2024-08-10T13:40:32.431+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-08-10T13:40:32.539+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T13:40:32.608+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:40:32.678+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T13:40:32.693+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T13:40:32.789+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T13:40:32.924+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T13:40:32.933+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T13:40:32.936+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 0.907 seconds (process running for 4928.49)
+2024-08-10T13:40:32.937+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T13:40:34.383+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-10T13:40:34.383+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-10T13:40:34.384+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-10T13:40:34.431+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:40:34.432+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:40:34.441+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:40:34.442+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:40:34.457+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:40:34.457+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:40:34.467+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:40:34.468+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:40:34.469+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:40:34.469+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:40:34.473+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:40:34.474+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:41:08.115+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:41:08.116+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:08.119+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:41:08.119+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:08.130+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T13:41:08.131+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T13:41:08.140+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T13:41:08.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T13:41:08.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T13:41:08.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T13:41:08.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T13:41:08.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T13:41:12.742+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:41:12.743+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:41:12.745+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:41:12.745+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:41:12.751+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:41:12.752+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:41:12.756+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:41:12.756+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:41:12.758+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:41:12.758+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:41:12.761+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:41:12.762+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:41:17.078+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:41:17.079+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:17.082+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:41:17.082+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:17.088+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T13:41:17.088+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T13:41:17.091+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:41:17.092+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:41:17.095+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T13:41:17.096+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T13:41:17.096+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T13:41:17.096+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T13:41:17.096+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T13:41:17.096+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T13:41:59.301+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:41:59.302+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:59.304+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:41:59.305+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:41:59.308+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T13:41:59.308+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T13:41:59.313+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T13:41:59.314+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2024-08-10T13:41:59.314+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T13:41:59.314+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T13:41:59.314+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T13:41:59.314+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T13:42:13.138+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:42:13.139+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:13.140+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:42:13.140+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:13.143+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:42:13.143+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:13.147+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:42:13.147+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:13.149+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:42:13.149+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:13.150+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:42:13.150+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:13.157+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T13:42:13.157+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-08-10T13:42:13.163+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.monocept.app.exception.NoRecordFoundException: Your account is inactive]
+2024-08-10T13:42:25.925+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:42:25.926+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:25.927+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:42:25.928+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:25.932+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:42:25.932+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:25.937+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:42:25.937+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:42:25.938+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:42:25.939+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:25.941+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:42:25.942+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:25.944+05:30  WARN 29152 --- [13-springBankApp-project] [http-nio-8082-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.monocept.app.exception.NoRecordFoundException: Please check account number properly]
+2024-08-10T13:42:58.236+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:42:58.237+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:42:58.239+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:42:58.239+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:42:58.242+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id,
+        a1_0.customer_id 
+    from
+        account a1_0 
+    where
+        a1_0.account_number=?
+2024-08-10T13:42:58.243+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2024-08-10T13:42:58.245+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:42:58.245+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:42:58.248+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T13:42:58.248+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T13:42:58.248+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [500980.0]
+2024-08-10T13:42:58.248+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T13:42:58.248+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T13:42:58.248+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T13:43:37.231+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:43:37.231+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:43:37.233+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:43:37.233+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:43:37.236+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:43:37.236+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:43:37.240+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:43:37.240+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [rmkak62@gmail.com]
+2024-08-10T13:43:37.241+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        customer c1_0 
+    left join
+        users u1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        c1_0.customer_id=?
+2024-08-10T13:43:37.241+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:43:37.243+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:43:37.243+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:43:37.246+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    update
+        account 
+    set
+        active=?,
+        balance=?,
+        bank_id=?,
+        customer_id=? 
+    where
+        account_number=?
+2024-08-10T13:43:37.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T13:43:37.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:DOUBLE) <- [501480.0]
+2024-08-10T13:43:37.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:INTEGER) <- [1]
+2024-08-10T13:43:37.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [7]
+2024-08-10T13:43:37.246+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [8]
+2024-08-10T13:43:37.254+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    select
+        coalesce(sum(a1_0.balance), 0) 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:43:37.254+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:43:37.261+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    update
+        customer 
+    set
+        active=?,
+        first_name=?,
+        last_name=?,
+        total_balance=? 
+    where
+        customer_id=?
+2024-08-10T13:43:37.262+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2024-08-10T13:43:37.262+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Rmvk]
+2024-08-10T13:43:37.262+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [ak]
+2024-08-10T13:43:37.262+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:DOUBLE) <- [501480.0]
+2024-08-10T13:43:37.262+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [7]
+2024-08-10T13:43:37.275+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        transaction
+        (amount, receiver_account, sender_account, transaction_date, transaction_type) 
+    values
+        (?, ?, ?, ?, ?)
+2024-08-10T13:43:37.275+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:DOUBLE) <- [500.0]
+2024-08-10T13:43:37.276+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [8]
+2024-08-10T13:43:37.276+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:BIGINT) <- [null]
+2024-08-10T13:43:37.276+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2024-08-10T13:43:37.273540]
+2024-08-10T13:43:37.276+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:ENUM) <- [Transfer]
+2024-08-10T13:45:04.322+05:30  INFO 29152 --- [13-springBankApp-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-10T13:45:04.344+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:45:04.346+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-08-10T13:45:04.351+05:30  INFO 29152 --- [13-springBankApp-project] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-08-10T13:45:04.448+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Starting Application using Java 21.0.3 with PID 29152 (C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp\target\classes started by Ajay kumar in C:\Users\Ajay kumar\Documents\workspace-spring-tool-suite-4-4.23.1.RELEASE\15-springBankApp)
+2024-08-10T13:45:04.448+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-10T13:45:04.448+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:45:04.631+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-10T13:45:04.653+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 7 JPA repository interfaces.
+2024-08-10T13:45:04.733+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-08-10T13:45:04.733+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-10T13:45:04.733+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-10T13:45:04.753+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-10T13:45:04.754+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 305 ms
+2024-08-10T13:45:04.794+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-10T13:45:04.796+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-10T13:45:04.805+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-10T13:45:04.806+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-08-10T13:45:04.820+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33ba50a4
+2024-08-10T13:45:04.820+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-08-10T13:45:04.934+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-10T13:45:05.019+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-10T13:45:05.086+05:30 DEBUG 29152 --- [13-springBankApp-project] [restartedMain] c.m.a.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2024-08-10T13:45:05.101+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-08-10T13:45:05.191+05:30  WARN 29152 --- [13-springBankApp-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-10T13:45:05.319+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-10T13:45:05.329+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-08-10T13:45:05.331+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] com.monocept.app.Application             : Started Application in 0.909 seconds (process running for 5200.885)
+2024-08-10T13:45:05.331+05:30  INFO 29152 --- [13-springBankApp-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-10T13:48:18.369+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-10T13:48:18.370+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-10T13:48:18.371+05:30  INFO 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-10T13:48:18.396+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.customer_id,
+        u1_0.email,
+        u1_0.password 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-08-10T13:48:18.398+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:48:18.400+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.email,
+        a1_0.name,
+        a1_0.password 
+    from
+        adminstrator a1_0 
+    where
+        a1_0.email=?
+2024-08-10T13:48:18.400+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [ak@gmail.com]
+2024-08-10T13:48:18.424+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance 
+    from
+        customer c1_0 
+    order by
+        c1_0.first_name 
+    limit
+        ?, ?
+2024-08-10T13:48:18.424+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:INTEGER) <- [0]
+2024-08-10T13:48:18.424+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [5]
+2024-08-10T13:48:18.434+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.customer_id=?
+2024-08-10T13:48:18.435+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-08-10T13:48:18.439+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.customer_id=?
+2024-08-10T13:48:18.439+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2024-08-10T13:48:18.441+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.customer_id=?
+2024-08-10T13:48:18.441+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2024-08-10T13:48:18.444+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.customer_id=?
+2024-08-10T13:48:18.444+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:48:18.445+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        c1_0.customer_id,
+        c1_0.active,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.total_balance,
+        u1_0.email,
+        u1_0.password,
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        users u1_0 
+    left join
+        customer c1_0 
+            on c1_0.customer_id=u1_0.customer_id 
+    left join
+        users_roles r1_0 
+            on u1_0.id=r1_0.user_id 
+    left join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        u1_0.customer_id=?
+2024-08-10T13:48:18.446+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2024-08-10T13:48:18.449+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        count(c1_0.customer_id) 
+    from
+        customer c1_0
+2024-08-10T13:48:18.460+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:48:18.460+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2024-08-10T13:48:18.463+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:48:18.463+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2024-08-10T13:48:18.464+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:48:18.465+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2024-08-10T13:48:18.465+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:48:18.466+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2024-08-10T13:48:18.467+05:30 DEBUG 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.SQL                        : 
+    select
+        a1_0.customer_id,
+        a1_0.account_number,
+        a1_0.active,
+        a1_0.balance,
+        a1_0.bank_id 
+    from
+        account a1_0 
+    where
+        a1_0.customer_id=?
+2024-08-10T13:48:18.467+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]

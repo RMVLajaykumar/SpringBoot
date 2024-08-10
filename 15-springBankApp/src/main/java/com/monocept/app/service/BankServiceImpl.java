@@ -130,6 +130,7 @@ public class BankServiceImpl implements BankService {
 		AccountResponseDto accountResponseDto = new AccountResponseDto();
 		accountResponseDto.setAccountNumber(account.getAccountNumber());
 		accountResponseDto.setBalance(account.getBalance());
+		accountResponseDto.setActive(account.isActive());
 		return accountResponseDto;
 	}
 
@@ -166,8 +167,13 @@ public class BankServiceImpl implements BankService {
 		 Bank bank = bankRepository.findById(bid).orElse(null);
 		
 		 
+		 
 		 if(bank != null) {
 			 Customer customer = customerRepository.findById(cid).orElse(null);
+			 
+			 if(!customer.isActive()) {
+					throw new NoRecordFoundException("Customer is not activated "+customer.getCustomer_id());
+				}
 			 
 			 if(customer != null){
 				 
@@ -195,8 +201,11 @@ public class BankServiceImpl implements BankService {
 				 		    + "Pinnacle Bank";
 
 				 		sendEmail(user.getEmail(), subject,emailBody);
-				 return convertCustomerToCustomerResponseDto(save);
+				      return convertCustomerToCustomerResponseDto(save);
 				 
+			 }
+			 else {
+				 throw new CustomerNotFoundException("customer  with id: "+cid+" not found");
 			 }
 		 }
 		return null;
@@ -237,11 +246,21 @@ public class BankServiceImpl implements BankService {
 	@Override
 	public TransactionResponseDto doTransaction(long senderAccountNumber, long receiverAccountNumber, double amount) {
 		Optional<User> user = userRepository.findByEmail(getEmailFromSecurityContext());
+		Customer customer=user.get().getCustomer();
 		List<Account> accounts = user.get().getCustomer().getAccounts();
+		if(!customer.isActive()) {
+			throw new NoRecordFoundException("Customer is not activated "+customer.getCustomer_id());
+		}
 		for (Account account : accounts) {
 			if (account.getAccountNumber() == senderAccountNumber) {
 				Account senderAccount = accountRepository.findById(senderAccountNumber).orElse(null);
 				Account receiverAccount = accountRepository.findById(receiverAccountNumber).orElse(null);
+				if(!senderAccount.isActive()) {
+					throw new NoRecordFoundException("Your account is inactive");
+				}
+				if(!receiverAccount.isActive()) {
+					throw new NoRecordFoundException("receiver account is inactive");
+				}
 				if (senderAccount == null || receiverAccount == null) {
 					throw new NoRecordFoundException("Please check the sender account number " + senderAccountNumber
 							+ " and receiver account number " + receiverAccountNumber);
@@ -532,8 +551,11 @@ public class BankServiceImpl implements BankService {
 		if (customer == null) {
 			throw new NoRecordFoundException("Customer not associated with the user");
 		}
+		if(!customer.isActive()) {
+			throw new NoRecordFoundException("Customer is not activated "+customer.getCustomer_id());
+		}
 		for (Account account : accounts) {
-			if (account.getAccountNumber() == accountNumber) {
+			if (account.getAccountNumber() == accountNumber && isAccountActive(account)) {
 				account.setBalance(account.getBalance() + amount);
 				accountRepository.save(account);
 				Double totalBalance = accountRepository.getTotalBalance(customer);
@@ -632,6 +654,9 @@ public class BankServiceImpl implements BankService {
 		if (account.isActive()) {
 			throw new NoRecordFoundException("Account is already active");
 		}
+		if(!account.getCustomer().isActive()) {
+			throw new NoRecordFoundException("Customer is not activated customerId: "+account.getCustomer().getCustomer_id());
+		}
 		account.setActive(true);
 		accountRepository.save(account);
 		return "Account activated successfully";
@@ -652,7 +677,7 @@ public class BankServiceImpl implements BankService {
 
 	private boolean isAccountActive(Account account) {
 		if (!account.isActive()) {
-			return false;
+			throw new NoRecordFoundException("your account is not active");
 		}
 		return true;
 	}

@@ -90,7 +90,7 @@ public class BankAppController {
 				bankService.doTransaction(senderAccountNumber, receiverAccountNumber, amount), HttpStatus.OK);
 	}
 
-	@GetMapping("/customers/passbook/{accountNumber}")
+	@GetMapping("/passbook/{accountNumber}")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<PagedResponse<TransactionResponseDto>> getPassbook(
 			@PathVariable(name = "accountNumber") long accountNumber,
