@@ -14,6 +14,8 @@ import com.monocept.app.dto.LoginDto;
 import com.monocept.app.dto.RegisterDto;
 import com.monocept.app.service.AuthService;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api/auth")
