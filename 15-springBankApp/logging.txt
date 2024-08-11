@@ -6550,3 +6550,4 @@ org.springframework.security.core.userdetails.UsernameNotFoundException: User no
     where
         a1_0.customer_id=?
 2024-08-10T13:48:18.467+05:30 TRACE 29152 --- [13-springBankApp-project] [http-nio-8082-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2024-08-10T18:42:34.518+05:30  WARN 29152 --- [13-springBankApp-project] [HikariPool-7 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=4h39m29s118ms400ns).
