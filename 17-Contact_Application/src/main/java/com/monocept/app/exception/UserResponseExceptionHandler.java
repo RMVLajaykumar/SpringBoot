@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class StudentResponseExceptionHandler {
+public class UserResponseExceptionHandler {
 
 	@ExceptionHandler
-	public ResponseEntity<StudentErrorResponse> handleException(UserNotFoundException exc) {
+	public ResponseEntity<UserErrorResponse> handleException(UserNotFoundException exc) {
 
 		// create a Student Error Message
-		StudentErrorResponse error = new StudentErrorResponse();
+		UserErrorResponse error = new UserErrorResponse();
 
 		error.setStatus(HttpStatus.NOT_FOUND.value());
 		error.setMessage(exc.getMessage());
@@ -26,10 +26,10 @@ public class StudentResponseExceptionHandler {
 	}
 	
 	@ExceptionHandler
-	public ResponseEntity<StudentErrorResponse> handleException(ContactApiException exc) {
+	public ResponseEntity<UserErrorResponse> handleException(ContactApiException exc) {
 
 		// create a Student Error Message
-		StudentErrorResponse error = new StudentErrorResponse();
+		UserErrorResponse error = new UserErrorResponse();
 
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(exc.getMessage());
@@ -38,10 +38,10 @@ public class StudentResponseExceptionHandler {
 	}
 	
 	@ExceptionHandler(AccessDeniedException.class)
-	public ResponseEntity<StudentErrorResponse> handleException(AccessDeniedException exc) {
+	public ResponseEntity<UserErrorResponse> handleException(AccessDeniedException exc) {
 
 		// create a Student Error Message
-		StudentErrorResponse error = new StudentErrorResponse();
+		UserErrorResponse error = new UserErrorResponse();
 
 		error.setStatus(HttpStatus.UNAUTHORIZED.value());
 		error.setMessage(exc.getClass().getSimpleName());
@@ -53,10 +53,10 @@ public class StudentResponseExceptionHandler {
 	}
 	
 	@ExceptionHandler
-	public ResponseEntity<StudentErrorResponse> handleException(Exception exc) {
+	public ResponseEntity<UserErrorResponse> handleException(Exception exc) {
 
 		// create a Student Error Message
-		StudentErrorResponse error = new StudentErrorResponse();
+		UserErrorResponse error = new UserErrorResponse();
 		System.out.println("printing error");
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(exc.getClass().getSimpleName());
@@ -71,10 +71,10 @@ public class StudentResponseExceptionHandler {
 	
 
 	@ExceptionHandler
-	public ResponseEntity<StudentErrorResponse> handleException(NoRecordFoundException exc) {
+	public ResponseEntity<UserErrorResponse> handleException(NoRecordFoundException exc) {
 
 		// create a Student Error Message
-		StudentErrorResponse error = new StudentErrorResponse();
+		UserErrorResponse error = new UserErrorResponse();
 
 		error.setStatus(HttpStatus.NOT_FOUND.value());
 		error.setMessage(exc.getMessage());

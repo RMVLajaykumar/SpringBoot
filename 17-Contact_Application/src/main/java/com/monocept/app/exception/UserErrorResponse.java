@@ -1,19 +1,19 @@
 package com.monocept.app.exception;
 
-public class StudentErrorResponse {
+public class UserErrorResponse {
 
 	private int status;
 	private String message;
 	private long timeStamp;
 	
-	public StudentErrorResponse(int status, String message, long timeStamp) {
+	public UserErrorResponse(int status, String message, long timeStamp) {
 		super();
 		this.status = status;
 		this.message = message;
 		this.timeStamp = timeStamp;
 	}
 
-	public StudentErrorResponse() {
+	public UserErrorResponse() {
 	}
 
 	public int getStatus() {
