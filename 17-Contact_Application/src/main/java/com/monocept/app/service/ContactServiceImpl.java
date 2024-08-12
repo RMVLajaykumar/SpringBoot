@@ -315,9 +315,7 @@ public class ContactServiceImpl implements ContactService {
 				userRepository.save(user);
 
 				return "Contact Deleted Successfully";
-			} else {
-				return "contact is already deleted";
-			}
+			} 
 
 		}
 		throw new NoRecordFoundException("Contact Id " + id + " not found to for user :" + user.getUserId());

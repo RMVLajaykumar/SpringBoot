@@ -4,6 +4,8 @@ import java.nio.file.AccessDeniedException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -16,10 +18,13 @@ import jakarta.validation.ConstraintViolationException;
 
 @ControllerAdvice
 public class UserResponseExceptionHandler {
+	 private static final Logger logger = LoggerFactory.getLogger(UserResponseExceptionHandler.class);
+
 
 	@ExceptionHandler
 	public ResponseEntity<UserErrorResponse> handleException(UserNotFoundException exc) {
 
+		
 		// create a Student Error Message
 		UserErrorResponse error = new UserErrorResponse();
 
@@ -37,7 +42,8 @@ public class UserResponseExceptionHandler {
 
 		// create a Student Error Message
 		UserErrorResponse error = new UserErrorResponse();
-
+		logger.error(exc.getMessage());
+        
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(exc.getMessage());
 		error.setTimeStamp(System.currentTimeMillis());
@@ -49,6 +55,7 @@ public class UserResponseExceptionHandler {
 
 		// create a Student Error Message
 		UserErrorResponse error = new UserErrorResponse();
+		logger.error(exc.getMessage());
 
 		error.setStatus(HttpStatus.UNAUTHORIZED.value());
 		error.setMessage(exc.getClass().getSimpleName());
@@ -64,6 +71,7 @@ public class UserResponseExceptionHandler {
 
 		// create a Student Error Message
 		UserErrorResponse error = new UserErrorResponse();
+		logger.error(exc.getMessage());
 		System.out.println("printing error");
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(exc.getClass().getSimpleName());
@@ -82,6 +90,7 @@ public class UserResponseExceptionHandler {
 
 		// create a Student Error Message
 		UserErrorResponse error = new UserErrorResponse();
+		logger.error(exc.getMessage());
 
 		error.setStatus(HttpStatus.NOT_FOUND.value());
 		error.setMessage(exc.getMessage());
