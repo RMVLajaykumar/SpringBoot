@@ -60,7 +60,7 @@ public class ContactController {
 
 	@PutMapping("/users/{user_id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<UserResponseDto> updateUserProfile(@Valid @RequestBody UserRequestDto userRequestDto,@PathVariable(name="user_id") long user_id) {
+	public ResponseEntity<UserResponseDto> updateUserProfile( @RequestBody UserRequestDto userRequestDto,@PathVariable(name="user_id") long user_id) {
 
 		return new ResponseEntity<UserResponseDto>(contactService.updateUserProfile(userRequestDto,user_id), HttpStatus.ACCEPTED);
 	}
@@ -106,7 +106,7 @@ public class ContactController {
 	
 	@PutMapping("/contacts/{id}")
 	@PreAuthorize("hasRole('STAFF')")
-	public ResponseEntity<ContactResponseDto> updateContactbyId(@PathVariable(name="id")long id,@Valid @RequestBody ContactRequestDto contactRequestDto){
+	public ResponseEntity<ContactResponseDto> updateContactbyId(@PathVariable(name="id")long id,@RequestBody ContactRequestDto contactRequestDto){
 		return new ResponseEntity<ContactResponseDto>(contactService.updateContactDetails(id,contactRequestDto),HttpStatus.OK);
 	}
 	
@@ -128,7 +128,7 @@ public class ContactController {
 	
 	@PutMapping("contacts/{contactId}/details")
 	@PreAuthorize("hasRole('STAFF')")
-	public ResponseEntity<ContactDetailResponseDto> updateContactDetailsforContact(@Valid @RequestBody ContactDetailRequestDto contactDetailsRequestDto,@PathVariable(name="contactId") long contactId,@RequestParam(name="contactDetailsId") long contactDetailsId){
+	public ResponseEntity<ContactDetailResponseDto> updateContactDetailsforContact(@RequestBody ContactDetailRequestDto contactDetailsRequestDto,@PathVariable(name="contactId") long contactId,@RequestParam(name="contactDetailsId") long contactDetailsId){
 		return new ResponseEntity<ContactDetailResponseDto>(contactService.updateContactDetails(contactId, contactDetailsRequestDto,contactDetailsId),HttpStatus.OK);
 	}
 	

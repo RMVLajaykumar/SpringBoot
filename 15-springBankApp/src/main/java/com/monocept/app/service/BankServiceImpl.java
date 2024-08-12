@@ -595,6 +595,7 @@ public class BankServiceImpl implements BankService {
 		AccountResponseDto accountResponseDTO = new AccountResponseDto();
 		if (account != null) {
 			accountResponseDTO.setAccountNumber(account.getAccountNumber());
+			accountResponseDTO.setActive(account.isActive());
 		}
 		return accountResponseDTO;
 	}
@@ -641,8 +642,23 @@ public class BankServiceImpl implements BankService {
 			throw new NoRecordFoundException("Account is already deleted");
 		}
 		account.setActive(false);
+		String subject = "Notification: Your Account Has Been Deactivated at pinnacle bank";
+		String emailBody = "Dear " + account.getCustomer().getFirstName() + " " + account.getCustomer().getLastName() + ",\n\n"
+		        + "We are pleased to inform you that your account ending in ######" + accountNumber + " has been  deactivated.\n\n"
+		 
+		        + "If you have any questions or need further assistance, please contact our support team. We are here to ensure you have the best banking experience.\n\n"
+		        + "Thank you for choosing pinnacle bank. We look forward to serving your financial needs.\n\n"
+		        + "Best regards,\n" + "Customer Relations Team\n" + "pinnacle bank";
+
+		MailStructure mailStructure = new MailStructure();
+		mailStructure.setToEmail(account.getCustomer().getUser().getEmail());
+		mailStructure.setEmailBody(emailBody);
+		mailStructure.setSubject(subject);
+		emailUtil.sendEmail(mailStructure);
+
 		accountRepository.save(account);
-		return "Account deleted successfully";
+		return "Account activated successfully";
+
 	}
 
 	@Override
@@ -658,8 +674,24 @@ public class BankServiceImpl implements BankService {
 			throw new NoRecordFoundException("Customer is not activated customerId: "+account.getCustomer().getCustomer_id());
 		}
 		account.setActive(true);
+		String subject = "Notification: Your Account Has Been Activated at pinnacle bank";
+		String emailBody = "Dear " + account.getCustomer().getFirstName() + " " + account.getCustomer().getLastName() + ",\n\n"
+		        + "We are pleased to inform you that your account ending in ######" + accountNumber + " has been successfully activated.\n\n"
+		        + "You can now access all the features of our banking application and manage your finances with ease.\n\n"
+		        + "If you have any questions or need further assistance, please contact our support team. We are here to ensure you have the best banking experience.\n\n"
+		        + "Thank you for choosing pinnacle bank. We look forward to serving your financial needs.\n\n"
+		        + "Best regards,\n" + "Customer Relations Team\n" + "pinnacle bank";
+
+		MailStructure mailStructure = new MailStructure();
+		mailStructure.setToEmail(account.getCustomer().getUser().getEmail());
+		mailStructure.setEmailBody(emailBody);
+		mailStructure.setSubject(subject);
+		emailUtil.sendEmail(mailStructure);
+
 		accountRepository.save(account);
 		return "Account activated successfully";
+
+		
 	}
 
 	@Override

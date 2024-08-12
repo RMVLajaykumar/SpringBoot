@@ -14,6 +14,8 @@ import com.monocept.app.dto.LoginDto;
 import com.monocept.app.dto.RegisterDto;
 import com.monocept.app.service.AuthService;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 
 @RestController
 @RequestMapping("/api/auth")
@@ -29,6 +31,7 @@ public class AuthController {
 
     // Build Login REST API
     @PostMapping(value = {"/login", "/signin"})
+    @Operation( summary = "to signin or login ")
     public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
     	logger.error("In Login method");
         String token = authService.login(loginDto);
@@ -41,6 +44,7 @@ public class AuthController {
 
     // Build Register REST API
     @PostMapping(value = {"/register", "/signup"})
+    @Operation( summary = "to register or singup ")
     public ResponseEntity<String> register(@RequestBody RegisterDto registerDto){
     	logger.trace("in register method using trace ");
     	logger.error("In Register method "+registerDto.isAdmin());

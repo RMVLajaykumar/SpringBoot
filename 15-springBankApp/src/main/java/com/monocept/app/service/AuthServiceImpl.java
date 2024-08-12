@@ -70,7 +70,7 @@ public class AuthServiceImpl implements AuthService {
 	        Admin admin = new Admin();
 	        admin.setEmail(registerDto.getEmail());
 	        admin.setPassword(passwordEncoder.encode(registerDto.getPassword()));
-	        admin.setName(registerDto.getName());
+	       admin.setName(registerDto.getName());
 	        adminRepository.save(admin);
 
 	        return "Admin registered successfully!";
