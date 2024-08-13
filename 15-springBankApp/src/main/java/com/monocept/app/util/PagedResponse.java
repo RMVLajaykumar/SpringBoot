@@ -59,5 +59,6 @@ public class PagedResponse<T> {
 	public void setLast(boolean last) {
 		this.last = last;
 	}
+	
     
 }

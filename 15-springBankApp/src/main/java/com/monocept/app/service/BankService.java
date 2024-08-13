@@ -42,7 +42,7 @@ public interface BankService {
 
 	AccountResponseDto depositAmount(long accountNumber, double amount);
 	
-	List<AccountResponseDto> getAccounts();
+	PagedResponse<AccountResponseDto> getAccounts(int page, int size, String sortBy, String direction);
 
 
 

@@ -586,9 +586,22 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public List<AccountResponseDto> getAccounts() {
+	public PagedResponse<AccountResponseDto> getAccounts(int page, int size, String sortBy, String direction) 
+	{
+		Sort sort = Sort.by(sortBy);
+		if (direction.equalsIgnoreCase(Sort.Direction.DESC.name())) {
+			sort.descending();
+		} else {
+			sort.ascending();
+		}
+       Pageable pageable = PageRequest.of(page, size, sort);
+       
+		
 		User user = userRepository.findByEmail(getEmailFromSecurityContext()).orElse(null);
-		return convertAccounttoAccountResponseDto(user.getCustomer().getAccounts());
+		Page<Account> accounts = accountRepository.findByCustomer(user.getCustomer(),pageable);
+		
+		return new PagedResponse<AccountResponseDto>(convertAccounttoAccountResponseDto(accounts.getContent()),accounts.getNumber(),accounts.getSize(),accounts.getTotalElements(),accounts.getTotalPages(),accounts.isLast());
+		
 	}
 
 	private AccountResponseDto convertAccountTransactionToAccountResponseDto(Account account) {

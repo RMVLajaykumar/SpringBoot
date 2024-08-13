@@ -132,8 +132,6 @@ public class AdminController {
 		return new ResponseEntity<String>(bankService.activateAccount(accountNumber),HttpStatus.OK);
 	}
 	
-	
-	
 	@DeleteMapping("customers/{customerID}")
 	@Operation( summary = "deactivating existing Customer ")
 	@PreAuthorize("hasRole('ADMIN')")
