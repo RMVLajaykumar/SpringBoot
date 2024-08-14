@@ -55,7 +55,7 @@ public class CustomerResponseExceptionHandler {
 
 		// create a Student Error Message
 		CustomerErrorResponse error = new CustomerErrorResponse();
-
+		logger.error(exc.getMessage());
 		error.setStatus(HttpStatus.UNAUTHORIZED.value());
 		error.setMessage(exc.getClass().getSimpleName());
 		error.setTimeStamp(System.currentTimeMillis());

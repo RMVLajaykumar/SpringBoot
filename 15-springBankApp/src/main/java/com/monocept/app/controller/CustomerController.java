@@ -91,7 +91,7 @@ public class CustomerController {
 	@Operation( summary = "to get all accounts of customer ")
 	//@PreAuthorize("hasRole('USER')")
 	
-	public ResponseEntity<PagedResponse<AccountResponseDto>> getAllAccounts(	@RequestParam(name = "page", defaultValue = "0") int page,
+	public ResponseEntity<PagedResponse<AccountResponseDto>> getAllAccounts(@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "5") int size,
 			@RequestParam(name = "sortBy", defaultValue = "accountNumber") String sortBy,
 			@RequestParam(name = "direction", defaultValue = "asc") String direction) {
